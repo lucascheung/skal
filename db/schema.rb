@@ -35,17 +35,21 @@ ActiveRecord::Schema.define(version: 2019_02_25_105514) do
     t.bigint "bar_id"
     t.bigint "meet_up_time_id"
     t.bigint "coupon_id"
+    t.bigint "first_user_id"
+    t.bigint "last_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bar_id"], name: "index_matches_on_bar_id"
     t.index ["coupon_id"], name: "index_matches_on_coupon_id"
+    t.index ["first_user_id"], name: "index_matches_on_first_user_id"
+    t.index ["last_user_id"], name: "index_matches_on_last_user_id"
     t.index ["meet_up_time_id"], name: "index_matches_on_meet_up_time_id"
   end
 
   create_table "meet_up_times", force: :cascade do |t|
     t.datetime "meet_up_time"
-    t.boolean "user_first_accepted"
-    t.boolean "user_last_accepted"
+    t.boolean "first_user_accepted"
+    t.boolean "last_user_accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,6 +86,8 @@ ActiveRecord::Schema.define(version: 2019_02_25_105514) do
   add_foreign_key "matches", "bars"
   add_foreign_key "matches", "coupons"
   add_foreign_key "matches", "meet_up_times"
+  add_foreign_key "matches", "users", column: "first_user_id"
+  add_foreign_key "matches", "users", column: "last_user_id"
   add_foreign_key "swipes", "users", column: "swipee_id"
   add_foreign_key "swipes", "users", column: "swiper_id"
 end
