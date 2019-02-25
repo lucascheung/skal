@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
+
+  has_many :swipes, foreign_key: "swiper_id", class_name: "Swipe"
+  # has_many :swipes, foreign_key: "swipee_id", class_name: "Swipe"
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
