@@ -6,7 +6,13 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
 
   has_many :swipes, foreign_key: "swiper_id", class_name: "Swipe"
+  has_many :first_matches, foreign_key: "first_user_id", class_name: "Match"
+  has_many :last_matches, foreign_key: "last_user_id", class_name: "Match"
   # has_many :swipes, foreign_key: "swipee_id", class_name: "Swipe"
+
+  def matches
+    first_matches + last_matches
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
