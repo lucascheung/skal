@@ -3,121 +3,34 @@ User.destroy_all
 Match.destroy_all
 
 puts "Creating male users"
-anders = User.create(email: "andersthorson@gmail.com", password: "123456", name: "Anders Thorson", age: 23, location: 'London', bio: '', remote_photo_url: "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png")
-christian = User.create(email: "christiandaley@gmail.com", password: "123456", name: "Christian Daley", age: 21, location: 'London', bio: '', photos: [])
-tom = User.create(email: "tomfrey@gmail.com", password: "123456", name: "Tom Frey", age: 20, location: 'London', bio: '', photos: [])
-matt = User.create(email: "matthansen@gmail.com", password: "123456", name: "Matt Hansen", age: 28, location: 'London', bio: '', photos: [])
-oliver = User.create(email: "oliverembacker@gmail.com", password: "123456", name: "Oliver Embacher", age: 19, location: 'London', bio: '', photos: [])
+anders = User.create(email: "andersthorson@gmail.com", password: "123456", name: "Anders Thorson", age: 23, location: 'London')
+anders.bio = ""
+christian = User.create(email: "christiandaley@gmail.com", password: "123456", name: "Christian Daley", age: 21, location: 'London')
+christian.bio = "Looking at my phone searching for a reason to stop looking at my phone. "
+tom = User.create(email: "tomfrey@gmail.com", password: "123456", name: "Tom Frey", age: 20, location: 'London')
+tom.bio = "Tacos, Bicycles, Cats, Chilling, Tattoos, Tacos, Nonsense, New Things, You. Did I say tacos? Tacos."
+matt = User.create(email: "matthansen@gmail.com", password: "123456", name: "Matt Hansen", age: 28, location: 'London')
+matt.bio = "Looking for someone who likes making fun of bad movies, checking out local bands, sleeping in on Sundays, and laughing at themselves. Hoping you can show me a thing or two about what you’re into too."
+oliver = User.create(email: "oliverembacker@gmail.com", password: "123456", name: "Oliver Embacher", age: 29, location: 'London')
+oliver.bio = "I don’t want a partner in crime, I commit all my crimes on my own. I would never drag you into that. I floss. That’s how responsible I am. If you love dogs and sports, I’m down for whatever you are."
 
 puts "Creating female users"
-kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London', bio: '', photos: [])
-kristina = User.create(email: "pam@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London', bio: '', photos: [])
-kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London', bio: '', photos: [])
-kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London', bio: '', photos: [])
-kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London', bio: '', photos: [])
+kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London')
+kristina.bio = "Love to party, love going on adventures. Also Netflix and Chill."
+pam = User.create(email: "pamvasquez@gmail.com", password: "123456", name: "Pam Vasquez", age: 23, location: 'London')
+pam.bio = "I love roller coasters but the pirate ship ride completely terrifies me. I once backpacked around Lake Tahoe in 13 days. When I was 14 I got a concussion swing dancing."
+caro = User.create(email: "carohilton@gmail.com", password: "123456", name: "Caro Hilton", age: 25, location: 'London')
+caro.bio = "About Me: I like to sing-talk, guys with messy hair, reading the New Yorker on Sunday mornings, and funny voices. About You: If you’re still reading, that’s pretty good. Let’s do this."
+sara = User.create(email: "sarahenderson@gmail.com", password: "123456", name: "Sara Henderson", age: 27, location: 'London')
+sara.bio = "All happy girls are alike; every unhappy girl is unhappy in her own way. My kind of unhappy is full of self-deprecating humor, double IPAs, and is actually pretty rad. Let me know if you want to be miserable together."
+marie = User.create(email: "mariecuvander@gmail.com", password: "123456", name: "Marie Cuvander", age: 21, location: 'London')
+marie.bio = "I live my whole life setting up situations that will eventually lead to the phrase, “And then laughter and hilarity ensued…” Hoping this one will work out too."
 
-
-
-
-
-#
-#
-# mary = User.create(email: "mary@gmail.com", password: "123456")
-# susan = User.create(email: "susan@gmail.com", password: "123456")
-# sue = User.create(email: "sue@gmail.com", password: "123456")
-# gillian = User.create(email: "gillian@gmail.com", password: "123456")
-# carol = User.create(email: "carol@gmail.com", password: "123456")
-# puts "Done with users"
-# chicks = [mary, susan, sue, gillian, carol]
-#
-# puts 'Swipe'
-# chicks.each do |chick|
-#   Swipe.create(swiper: bob, swipee: chick, like: [true, false].sample)
-#   Swipe.create(swiper: chick, swipee: bob, like: [true, false].sample)
-#   puts "Created swipe"
-# end
-#
-# puts 'bar'
-# bar = Bar.create!(name:'dirty dicks', description:'yooooo', location:'london')
-#
-# puts 'coupon'
-# coupon = Coupon.create!(used:false)
-#
-# puts 'meet up time'
-# meet = MeetUpTime.create(first_user_accepted:false, last_user_accepted:false)
-#
-#
-#
-# puts 'match'
-# Match.create!(first_user: bob, last_user:sue, bar:bar, coupon:coupon, meet_up_time:meet)
-# puts 'done match'
-#
-#
-# #############
-#
-#
-# require 'faker'
-#
-# Swipe.destroy_all
-# User.destroy_all
-#
-#
-# ## User creations
-# puts "Creating Users"
-# bob = User.create(email: "bob@gmail.com", password: "123456")
-# mary = User.create(email: "mary@gmail.com", password: "123456")
-# susan = User.create(email: "susan@gmail.com", password: "123456")
-# sue = User.create(email: "sue@gmail.com", password: "123456")
-# gillian = User.create(email: "gillian@gmail.com", password: "123456")
-# carol = User.create(email: "carol@gmail.com", password: "123456")
-#
-# chicks = [mary, susan, sue, gillian, carol]
-
-# 10.times.each_with_index do |idx|
-#   name = Faker::Name.name
-#   email = "#{name.gsub(' ', '')}@gmail.com"
-#   gender = ["Female", "Male"].sample
-#   age = rand(18...28)
-#   password = 100000
-#   image = "https://res.cloudinary.com/dcteumtl0/image/upload/v1550763608/hotgirl#{idx+1}.jpg"
-#   new_user = User.new(name:name, email:email, password:password, age:age, gender:gender, image:image)
-#   new_user.save!
+# photo_urls.each do |photo_url|
+#   anders_photo1 = UserPhoto.new(user: anders)
+#   anders_photo1.remote_photo_url = photo_url
+#   anders_photo1.save
 # end
 
-## Swipe creations
-#
-# puts "Creating swipes"
-# chicks.each do |chick|
-#   Swipe.create(swiper: bob, swipee: chick, like: [true, false].sample)
-# end
-#
-# chicks.each do |chick|
-#   Swipe.create(swiper: mary, swipee: chick, like: [true, false].sample) if chick != mary
-# end
-#
-# chicks.each do |chick|
-#   Swipe.create(swiper: susan, swipee: chick, like: [true, false].sample) if chick != susan
-# end
-#
-# puts "Creating bars"
-#
-# dirty = Bar.create(name: 'Dirty Dicks', location: '202 Bishopsgate, London EC2M 4NR, UK', description: '3-floor pub with wood panelling, named after notoriously dirty, local 18th-century warehouse.')
-# purl = Bar.create(name: 'Purl London', location: '50-54 Blandford St, Marylebone, London W1U 7HX, UK', description: 'Inventively designed multi-sensory cocktails served in a brick-lined, 19th-century cellar bar.')
-# boston = Bar.create(name: '68 and Boston', location: '5 Greek St, Soho, London W1D 4DD, UK', description: 'Split-level wine and cocktail bar with refined wood panelling, banquettes and designer lighting.')
-# nightjar = Bar.create(name: 'Nightjar', location: '129 City Rd, Hoxton, London EC1V 1JB, UK', description: 'Nightjar')
 
-# puts "Creating coupons"
-#
-# 3.times.each do
-#   Coupon.create(used: false, expiry_date: Time.now + (2*7*24*60*60))
-# end
-#
-#
-# puts "Creating meet up times"
-#
-# puts "Creating matches"
-#
-# matches.each do |chick|
-#   Match.create(first_user: , last_user: , bar_id: , like: [true, false].sample)
-#   puts "Created swipe"
-# end
+
