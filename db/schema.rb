@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_153044) do
     t.integer "age"
     t.text "bio"
     t.string "location"
-    t.string "gender"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
