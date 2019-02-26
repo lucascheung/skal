@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
   root to: 'pages#home'
+  resources :users, only: [:index] do
+    resources :swipes, only: [:create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
