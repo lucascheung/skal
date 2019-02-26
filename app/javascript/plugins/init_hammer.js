@@ -11,7 +11,7 @@ function initCards(card, index) {
   newCards.forEach(function(card, index) {
     card.style.zIndex = allCards.length - index;
     card.style.transform =
-      "scale(" + (20 - index) / 20 + ") translateY(-" + 30 * index + "px)";
+      "scale(" + (20 - index) / 20 + ") translateY(-" + 25 * index + "px)";
     card.style.opacity = (10 - index) / 10;
   });
 
@@ -49,6 +49,7 @@ allCards.forEach(function(el) {
   });
 
   hammertime.on("panend", function(event) {
+    console.log(event);
     el.classList.remove("moving");
     tinderContainer.classList.remove("tinder_love");
     tinderContainer.classList.remove("tinder_nope");
@@ -81,6 +82,11 @@ allCards.forEach(function(el) {
         rotate +
         "deg)";
       initCards();
+      if (toX > 0) {
+        swipedRight(event.target.id);
+      } else {
+        swipedLeft(event.target.id);
+      }
     }
   });
 });
@@ -99,9 +105,11 @@ function createButtonListener(love) {
     if (love) {
       card.style.transform =
         "translate(" + moveOutWidth + "px, -100px) rotate(-30deg)";
+        swipedRight(event.target.id);
     } else {
       card.style.transform =
         "translate(-" + moveOutWidth + "px, -100px) rotate(30deg)";
+        swipedLeft(event.target.id);
     }
 
     initCards();
@@ -109,6 +117,25 @@ function createButtonListener(love) {
     event.preventDefault();
   };
 }
+
+function swipedRight(card_id) {
+  const user_id = card_id.substring(4);
+  console.log("swiped right");
+  let url = `users/${user_id}/swiped_right/`;
+  fetch( url, {
+    method: "POST",
+  })
+}
+
+function swipedLeft(card_id) {
+  const user_id = card_id.substring(4);
+  console.log("swiped left");
+  let url = `users/${user_id}/swiped_left/`;
+  fetch( url, {
+    method: "POST",
+  })
+}
+
 
 var nopeListener = createButtonListener(false);
 var loveListener = createButtonListener(true);
