@@ -17,3 +17,9 @@
     <button id="love"><i class="fa fa-heart"></i></button>
   </div>
 </div>
+
+<% if @users.first.photos == [] %>
+  <h3>yo</h3>
+<% else %>
+  <%= image_tag @users.first.photos[0].photo.url %>
+<% end %>
