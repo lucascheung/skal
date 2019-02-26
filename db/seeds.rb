@@ -1,9 +1,11 @@
 require 'csv'
 
+User.destroy_all
 Coupon.destroy_all
 Bar.destroy_all
 MeetUpTime.destroy_all
 Match.destroy_all
+Swipe.destroy_all
 
 # puts "Creating Users"
 # bob = User.create(email: "bob@gmail.com", password: "123456")
