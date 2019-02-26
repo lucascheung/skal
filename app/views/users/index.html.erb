@@ -1,23 +1,19 @@
-<h1>All users</h1>
-
-
-
 <div class="tinder">
   <div class="tinder--status">
-    <i class="fa fa-remove"></i>
+    <i class="fas fa-times"></i>
     <i class="fa fa-heart"></i>
   </div>
 
   <div class="tinder--cards">
     <% @users.each do |user| %>
-      <div class="tinder--card" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%), url('https://placeimg.com/300/600/people')">
+      <div class="tinder--card" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%), url('https://placeimg.com/300/600/people')" id=<%= "card#{user.id}" %>>
         <h3><%= "#{user.name}, #{user.age}" %></h3>
       </div>
     <% end %>
   </div>
 
   <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-remove"></i></button>
+    <button id="nope"><i class="fas fa-times"></i></button>
     <button id="love"><i class="fa fa-heart"></i></button>
   </div>
 </div>
