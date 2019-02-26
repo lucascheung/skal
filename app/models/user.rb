@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  mount_uploaders :photos, PhotoUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
@@ -9,6 +8,7 @@ class User < ApplicationRecord
   has_many :swipes, foreign_key: "swiper_id", class_name: "Swipe"
   has_many :first_matches, foreign_key: "first_user_id", class_name: "Match"
   has_many :last_matches, foreign_key: "last_user_id", class_name: "Match"
+  has_many :photos
   # has_many :swipes, foreign_key: "swipee_id", class_name: "Swipe"
 
   def matches
