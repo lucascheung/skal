@@ -37,8 +37,8 @@ oliver = User.create(email: "oliverembacker@gmail.com", password: "123456", name
 oliver.bio = "I don’t want a partner in crime, I commit all my crimes on my own. I would never drag you into that. I floss. That’s how responsible I am. If you love dogs and sports, I’m down for whatever you are."
 
 puts "Creating female users"
-kristina = User.create(email: "kristinaivanova@gmail.com", password: "123456", name: "Kristina Ivanova", age: 19, location: 'London')
-kristina.bio = "Love to party, love going on adventures. Also Netflix and Chill."
+angela = User.create(email: "angelalaw@gmail.com", password: "123456", name: "Angela Law", age: 19, location: 'London')
+angela.bio = "Love to party, love going on adventures. Also Netflix and Chill."
 pam = User.create(email: "pamvasquez@gmail.com", password: "123456", name: "Pam Vasquez", age: 23, location: 'London')
 pam.bio = "I love roller coasters but the pirate ship ride completely terrifies me. I once backpacked around Lake Tahoe in 13 days. When I was 14 I got a concussion swing dancing."
 caro = User.create(email: "carohilton@gmail.com", password: "123456", name: "Caro Hilton", age: 25, location: 'London')
@@ -48,11 +48,27 @@ sara.bio = "All happy girls are alike; every unhappy girl is unhappy in her own 
 marie = User.create(email: "mariecuvander@gmail.com", password: "123456", name: "Marie Cuvander", age: 21, location: 'London')
 marie.bio = "I live my whole life setting up situations that will eventually lead to the phrase, “And then laughter and hilarity ensued…” Hoping this one will work out too."
 
-# photo_urls.each do |photo_url|
-#   anders_photo1 = UserPhoto.new(user: anders)
-#   anders_photo1.remote_photo_url = photo_url
-#   anders_photo1.save
-# end
+puts "Creating photos"
+
+def create_user_photos(user, user_list)
+  photo_list = []
+  5.times.each_with_index do |idx|
+    photo_list << "https://res.cloudinary.com/dcteumtl0/image/upload/v1551190991/skal/users/#{user_list}#{idx+1}.jpg"
+  end
+  photo_list.each do |photo_url|
+    photo = Photo.new(user: user)
+    photo.remote_photo_url = photo_url
+    photo.save
+  end
+end
 
 
+create_user_photos(anders, 'anders')
+create_user_photos(oliver, 'oliver')
+create_user_photos(tom, 'tom')
+create_user_photos(matt, 'matt')
 
+create_user_photos(sara, 'sara')
+create_user_photos(angela, 'angela')
+create_user_photos(marie, 'marie')
+create_user_photos(caro, 'caro')
