@@ -7,7 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :name
-      # t.string :image
+      t.string :image
       t.integer :age
       t.text   :bio
       t.string :location
