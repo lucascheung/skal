@@ -66,15 +66,15 @@ end
 
 puts "Creating bar photos"
 
-def create_bar_photos(bar, bar_list)
-  bar_list = []
+def create_bar_photos(bar, dir)
+  photo_list = []
   3.times.each_with_index do |idx|
-    photo_list << "https://res.cloudinary.com/dcteumtl0/image/upload/v1551190991/skal/users/#{bar_list}/#{idx+1}.jpg"
+    photo_list << "https://res.cloudinary.com/dcteumtl0/image/upload/v1551262327/skal/bars/#{dir}/#{idx+1}.jpg"
   end
-  bar_list.each do |photo_url|
+  photo_list.each do |photo_url|
     photo = Photo.new(bar: bar)
     photo.remote_photo_url = photo_url
-    photo.save
+    photo.save!
   end
 end
 
@@ -90,5 +90,7 @@ create_user_photos(marie, 'marie')
 create_user_photos(caro, 'caro')
 create_user_photos(pam, 'pam')
 
-create_bar_photos()
+bluedoor = Bar.first
+
+create_bar_photos(bluedoor, 'bluedoor')
 

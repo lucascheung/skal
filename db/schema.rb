@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2019_02_26_105804) do
     t.string "name"
     t.string "location"
     t.text "description"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,9 +56,11 @@ ActiveRecord::Schema.define(version: 2019_02_26_105804) do
 
   create_table "photos", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "bar_id"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_photos_on_bar_id"
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
