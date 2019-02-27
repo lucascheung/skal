@@ -1,0 +1,80 @@
+.settings-container {
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .profile-pic {
+    margin: 10vh 0 0 0 ;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 20vw;
+  }
+  h2 {
+    margin: 3vh 0;
+  }
+  p {
+    margin-top: 5vw;
+  }
+  .checked-state.contact-type {
+       display: flex;
+       width: 100vw;
+       margin: 0 auto;
+       text-align: center;
+       color: #888;
+       font-size: 30px;
+       justify-content: center;
+  }
+   .checked-state.contact-type input {
+       display: none;
+  }
+   .checked-state.contact-type label {
+       width: 23vw;
+       cursor: pointer;
+       position: relative;
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+  }
+   .checked-state.contact-type label .option-circle {
+       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+       border: 0px solid #F9F9F9;
+       border-radius: 100%;
+       background: #333;
+       width: 18vw;
+       height: 18vw;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 10px;
+       color: #999;
+       font-family: 'Lato', sans-serif;
+  }
+   .checked-state.contact-type label .option-circle i {
+       font-size: 1.5em;
+  }
+   .checked-state.contact-type label .inner-text, .checked-state.contact-type label .inner-text a {
+       width: 50%;
+       font-size: 12px;
+       font-weight:inherit;
+       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+       color: inherit;
+       background:#333;
+       height:inherit;
+       border-radius:30px;
+       transform:translateY(10px);
+       padding:1em;
+  }
+   .checked-state.contact-type input:checked + label {
+       color: #84fab0 !important;
+       font-weight:600 !important;
+  }
+   .checked-state.contact-type input:checked + label .option-circle {
+       background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+       color: #fff;
+       box-shadow: 0 9px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.15);
+       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+}
+

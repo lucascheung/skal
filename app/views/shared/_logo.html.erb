@@ -1,4 +1,10 @@
 <!-- Logo -->
-<%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png", height: 50 %>
+<% if user_signed_in? %>
+  <%= link_to users_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png", height: 50 %>
+  <% end %>
+<% else %>
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png", height: 50 %>
+  <% end %>
 <% end %>

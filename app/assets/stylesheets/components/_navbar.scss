@@ -2,8 +2,8 @@
 .navbar-wagon {
   background: white;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0;
+  height: 10vh;
+  padding: 0 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +11,7 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 35px;
 }
 
 /* User Avatar */
@@ -19,6 +19,11 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+
+.navbar-wagon .placeholder {
+  height:35px;
+  width: 35px;
 }
 
 /* Right section */
