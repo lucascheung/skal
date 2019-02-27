@@ -84,7 +84,6 @@ create_user_photos(tom, 'tom')
 create_user_photos(matt, 'matt')
 create_user_photos(christian, 'christian')
 
-
 create_user_photos(sara, 'sara')
 create_user_photos(angela, 'angela')
 create_user_photos(marie, 'marie')
@@ -92,3 +91,4 @@ create_user_photos(caro, 'caro')
 create_user_photos(pam, 'pam')
 
 create_bar_photos()
+
