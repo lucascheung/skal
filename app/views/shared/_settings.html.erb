@@ -1,0 +1,11 @@
+<!-- Settings Navigation -->
+<div class="navbar-wagon-left">
+  <% if user_signed_in? %>
+    <!-- Avatar to settings -->
+    <div class="navbar-wagon-item">
+      <%= link_to settings_path do %>
+        <%= image_tag 'profile.png', class: "avatar"%>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,5 @@
+<%= render 'shared/settings_navbar' %>
+<h1>This is settings page</h1>
+<%= link_to destroy_user_session_path, method: :delete do %>
+  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+<% end %>

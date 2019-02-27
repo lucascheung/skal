@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
   root to: 'pages#home'
-  resources :users, only: [:index] do
+  get 'settings', to: 'pages#settings', as: 'settings'
+  resources :users, only: [:index, :show] do
     resources :swipes, only: [:create]
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'
     post 'swiped_left', to: 'swipes#swiped_left', as: 'swiped_left'

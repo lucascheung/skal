@@ -1,3 +1,9 @@
-<h1>SKÅL</h1>
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-<%= link_to "Swipe now", users_path  %>
+<%= render 'shared/navbar' %>
+<div class="signin-container hidden-md hidden-lg">
+  <h1>SKÅL</h1>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+</div>
+
+<div class="hidden-xs hidden-sm">
+  <h1>THIS IS DESKTOP</h1>
+</div>
