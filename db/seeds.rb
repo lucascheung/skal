@@ -90,7 +90,7 @@ create_user_photos(marie, 'marie')
 create_user_photos(caro, 'caro')
 create_user_photos(pam, 'pam')
 
+
 bluedoor = Bar.first
 
 create_bar_photos(bluedoor, 'bluedoor')
-
