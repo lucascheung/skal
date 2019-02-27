@@ -9,4 +9,8 @@ class UsersController < ApplicationController
       @users = User.where("id NOT IN (?)", @swiped_id)
     end
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
 end
