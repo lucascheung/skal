@@ -4,7 +4,6 @@ class CreateBars < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :location
       t.text :description
-      t.string :photo
 
       t.timestamps
     end
