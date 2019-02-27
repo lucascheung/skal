@@ -28,6 +28,7 @@ class User < ApplicationRecord
       user.gender = auth.extra.raw_info.gender # assuming the user model has a name
       user.image = auth.info.image
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
+      user.preference = user.gender == 'male' ? 'female' : 'male'
       photo = Photo.new(user: user)
       photo.remote_photo_url = auth.info.image
       photo.save

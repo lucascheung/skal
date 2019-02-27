@@ -1,0 +1,33 @@
+.fb-signup {
+  background-color: #4267b2;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+  &:active {
+    text-decoration: none;
+    color: $white;
+    background-color: #495e88;
+  }
+}
+
+.btn-logout {
+  background-color: #e07f78;
+  padding: 3vw 15vw;
+  border-radius: 8px;
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+  &:active {
+    text-decoration: none;
+    color: $white;
+    background-color: #ce6058;
+  }
+}
