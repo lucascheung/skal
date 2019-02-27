@@ -3,10 +3,10 @@
     <i class="fas fa-times"></i>
     <i class="fa fa-heart"></i>
   </div>
-
   <div class="tinder--cards">
     <% @users.each do |user| %>
-      <div class="tinder--card" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%), url('https://placeimg.com/300/600/people')" id=<%= "card#{user.id}" %>>
+      <% url = image_path user.photos[0].photo.url %>
+      <div class="tinder--card" id=<%= "card#{user.id}" %> style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%), url('<%= url %>');" >
         <h3><%= "#{user.name}, #{user.age}" %></h3>
       </div>
     <% end %>
@@ -17,9 +17,3 @@
     <button id="love"><i class="fa fa-heart"></i></button>
   </div>
 </div>
-
-<% if @users.first.photos == [] %>
-  <h3>yo</h3>
-<% else %>
-  <%= image_tag @users.first.photos[0].photo.url %>
-<% end %>
