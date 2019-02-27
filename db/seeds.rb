@@ -90,5 +90,5 @@ create_user_photos(marie, 'marie')
 create_user_photos(caro, 'caro')
 create_user_photos(pam, 'pam')
 
-create_bar_photos()
+# create_bar_photos()
 

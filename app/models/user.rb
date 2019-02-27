@@ -15,15 +15,19 @@ class User < ApplicationRecord
     first_matches + last_matches
   end
 
+  def self.age_calculate(dob)
+    now = Time.now.utc.to_date
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.first_name
-      user.bio = auth.extra.raw_info.gender # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-      # user.gender = auth.info.user_gender
-      puts "#{auth.info}------------------------"
+      user.gender = auth.extra.raw_info.gender # assuming the user model has a name
+      user.image = auth.info.image
+      user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       photo = Photo.new(user: user)
       photo.remote_photo_url = auth.info.image
       photo.save
