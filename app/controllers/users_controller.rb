@@ -13,4 +13,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def change_preference
+    current_user.preference = params[:gender]
+  end
 end
