@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="tinder">
   <div class="tinder--status">
     <i class="fas fa-times"></i>
@@ -10,10 +11,5 @@
         <h3><%= "#{user.name}, #{user.age}" %></h3>
       </div>
     <% end %>
-  </div>
-
-  <div class="tinder--buttons">
-    <button id="nope"><i class="fas fa-times"></i></button>
-    <button id="love"><i class="fa fa-heart"></i></button>
   </div>
 </div>

@@ -1,5 +1,20 @@
 <%= render 'shared/settings_navbar' %>
-<h1>This is settings page</h1>
-<%= link_to destroy_user_session_path, method: :delete do %>
-  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-<% end %>
+<div class="settings-container">
+  <%= image_tag current_user.photos[0].photo.url, class:'profile-pic', alt: "profile-pic" %>
+  <h2><%= "#{current_user.name}, #{current_user.age}" %></h2>
+  <p>Preference</p>
+  <div class="checked-state contact-type">
+    <input type="radio" id="contact-type-1" name="contact-type-radio" />
+    <label for="contact-type-1">
+      <span class="option-circle"><i class="fas fa-mars"></i></span>
+    </label>
+
+    <input type="radio" id="contact-type-2" name="contact-type-radio" checked="checked" />
+    <label for="contact-type-2">
+      <span class="option-circle"><i class="fas fa-venus"></i></span>
+    </label>
+  </div>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+  <% end %>
+</div>
