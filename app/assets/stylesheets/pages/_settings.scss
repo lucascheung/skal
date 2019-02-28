@@ -30,7 +30,7 @@
    .checked-state.contact-type input {
        display: none;
   }
-   .checked-state.contact-type label {
+   .checked-state.contact-type a {
        width: 20vw;
        cursor: pointer;
        position: relative;
@@ -38,7 +38,7 @@
        justify-content: center;
        flex-wrap: wrap;
   }
-   .checked-state.contact-type label .option-circle {
+   .checked-state.contact-type a .option-circle {
        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
        border: 0px solid #F9F9F9;
        border-radius: 100%;
@@ -52,22 +52,23 @@
        color: #999;
        font-family: 'Lato', sans-serif;
   }
-   .checked-state.contact-type label .option-circle i {
+   .checked-state.contact-type a .option-circle i {
        font-size: 1.5em;
   }
 
-   .checked-state.contact-type input:checked + label {
+   .checked-state.contact-type a {
        color: #84fab0 !important;
        font-weight:400 !important;
+       text-decoration: none;
   }
-   .checked-state.contact-type input:checked + label .option-circle {
+   .checked-state.contact-type a .option-circle {
        color: #fff;
        // box-shadow: 0 9px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.15);
        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-       &.male {
+       &.male.on {
         background-image: linear-gradient(120deg, #88c3ff 0%, #c7dff7 100%);
        }
-       &.female{
+       &.female.on {
         background-image: linear-gradient(120deg, #ff79d4 0%, #f7c7e7 100%);
        }
   }

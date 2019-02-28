@@ -1,12 +1,13 @@
+require 'pry-byebug'
 class UsersController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :verify_authenticity_token, only:[:change_preference]
   def index
     @swiped_id = []
     if current_user.swipes == []
-      @users = User.all
+      @users = User.where.not('id = ?', current_user.id).where('gender = ?', current_user.preference)
     else
       current_user.swipes.each { |swipe| @swiped_id << swipe.swipee.id }
-      @users = User.where("id NOT IN (?)", @swiped_id)
+      @users = User.where.not('id = ?', current_user.id).where("id NOT IN (?)", @swiped_id).where('gender = ?', current_user.preference)
     end
   end
 
@@ -15,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   def change_preference
-    current_user.preference = params[:gender]
+    user = current_user
+    user.preference = params[:preference]
+    user.save
   end
 end

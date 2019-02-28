@@ -1,2 +1,2 @@
 import "bootstrap";
-import '../plugins/init_hammer'
+import '../plugins/init_hammer';

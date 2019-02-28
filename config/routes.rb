@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # end
   root to: 'pages#home'
   get 'settings', to: 'pages#settings', as: 'settings'
+  post 'change_preference', to: 'users#change_preference', as: 'change_preference'
   resources :users, only: [:index, :show] do
     resources :swipes, only: [:create]
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'

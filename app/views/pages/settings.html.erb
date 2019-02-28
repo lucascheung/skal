@@ -5,15 +5,13 @@
   <div class="preference">
     <p>Preference</p>
     <div class="checked-state contact-type">
-      <input type="radio" id="contact-type-1" name="contact-type-radio" />
-      <label for="contact-type-1">
-        <span class="option-circle male"><i class="fas fa-mars"></i></span>
-      </label>
+      <%= link_to change_preference_path(preference: 'male'), remote: true, method: :post do %>
+        <span class='<%= "option-circle male #{@male_on}" %>'><i class="fas fa-mars"></i></span>
+      <% end %>
 
-      <input type="radio" id="contact-type-2" name="contact-type-radio" checked="checked" />
-      <label for="contact-type-2">
-        <span class="option-circle female"><i class="fas fa-venus"></i></span>
-      </label>
+      <%= link_to change_preference_path(preference: 'female'), remote: true, method: :post do %>
+        <span class='<%= "option-circle female #{@female_on}" %>'><i class="fas fa-venus"></i></span>
+      <% end %>
     </div>
   </div>
 
@@ -21,3 +19,8 @@
     <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
   <% end %>
 </div>
+
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "preference" %>
+<% end %>
