@@ -6,4 +6,23 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.text-top-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#text-header {
+  font-weight: bolder;
+}
+
+#text-sub-header {
+  letter-spacing: 3px;
 }
