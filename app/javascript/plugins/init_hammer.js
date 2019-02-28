@@ -49,7 +49,6 @@ allCards.forEach(function(el) {
   });
 
   hammertime.on("panend", function(event) {
-    console.log(event);
     el.classList.remove("moving");
     tinderContainer.classList.remove("tinder_love");
     tinderContainer.classList.remove("tinder_nope");
@@ -89,34 +88,27 @@ allCards.forEach(function(el) {
       }
     }
   });
+
+  hammertime.on('tap', function(event) {
+    let photos = JSON.parse(event.target.dataset.photos);
+    console.log(photos);
+    let newIndex = photoIndex(photos, event);
+    event.target.dataset.photoIdx = newIndex;
+    let photo = photos[newIndex];
+    let bgImage = `linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%), url('${photo}')`;
+    event.target.style.backgroundImage = bgImage;
+  });
 });
 
-function createButtonListener(love) {
-  return function(event) {
-    var cards = document.querySelectorAll(".tinder--card:not(.removed)");
-    var moveOutWidth = document.body.clientWidth * 1.5;
 
-    if (!cards.length) return false;
-
-    var card = cards[0];
-
-    card.classList.add("removed");
-
-    if (love) {
-      card.style.transform =
-        "translate(" + moveOutWidth + "px, -100px) rotate(-30deg)";
-        swipedRight(event.target.id);
-    } else {
-      card.style.transform =
-        "translate(-" + moveOutWidth + "px, -100px) rotate(30deg)";
-        swipedLeft(event.target.id);
-    }
-
-    initCards();
-
-    event.preventDefault();
-  };
+function photoIndex(photos, event) {
+  if (parseInt(event.target.dataset.photoIdx, 10) + 1 >= photos.length) {
+    return 0;
+  } else {
+    return parseInt(event.target.dataset.photoIdx, 10) + 1;
+  }
 }
+
 
 function swipedRight(card_id) {
   const user_id = card_id.substring(4);
@@ -137,8 +129,3 @@ function swipedLeft(card_id) {
 }
 
 
-var nopeListener = createButtonListener(false);
-var loveListener = createButtonListener(true);
-
-nope.addEventListener("click", nopeListener);
-love.addEventListener("click", loveListener);
