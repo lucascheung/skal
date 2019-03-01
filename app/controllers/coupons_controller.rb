@@ -12,20 +12,20 @@ class CouponsController < ApplicationController
   end
 
   def create
-    used = 0
-    expiry_date = Time.now + (2*7*24*60*60)
-    location_verified = 1
-    content = "Free drinks"
-    Coupon.create(used: used, expiry_date: expiry_date, location_verified: location_verified, content: content)
+    used = false
+    expiry_date = Time.now + (2 * 7 * 24 * 60 * 60)
+    location_validated = false
+    content = "1 free drink"
+    Coupon.create(used: used, expiry_date: expiry_date, location_validated: location_validated, content: content)
   end
 
-  def edit
-    @coupon.used = 1
+  def used
+    @coupon.used = true
   end
 
   def expired?
     current_time = Time.now
-    true if @coupon.expiry_date < current_time
+    @coupon.expiry_date < current_time
   end
 
   def destroy
@@ -35,7 +35,7 @@ class CouponsController < ApplicationController
   private
 
   def coupon_params
-    params.require(:coupon).permit(:expiry_date, :used, :location_verified)
+    params.require(:coupon).permit(:expiry_date, :used, :location_validated)
   end
 
   def set_coupon
