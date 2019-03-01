@@ -90,11 +90,18 @@ body.loaded {
 
 // BEEERRRRRRRR
 .home-container {
-  background-color: #0e83cd;
-  color: $white;
-  font-weight: bolder;
+  background-color: #559fce;
+  color: #fefefe;
+  width: 100vw;
+  height: 100vh;
   h1 {
     letter-spacing: 5px;
+    font-weight: bolder;
+    position:absolute;
+    top: 4vh;
+  }
+  p {
+    padding-top: 10vh;
   }
 }
 
@@ -103,14 +110,14 @@ body.loaded {
   margin: 0 0;
   overflow: hidden;
   position: relative;
-  top: -20px;
+  top: 0px;
   width: 248px;
 }
 
 #beer-container div { position: absolute; }
 
 .pour {
-  top: 30px;
+  top: 150px;
   position: absolute;
   left: 45%;
   width: 20px;

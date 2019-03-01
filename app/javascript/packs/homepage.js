@@ -12,19 +12,19 @@ $(document).ready(function() {
     .slideUp(500);
 
   $('#liquid') // I Said Fill 'Er Up!
-    .delay(3400)
+    .delay(2000)
     .animate({
       height: '280px'
     }, 2500);
 
   $('.beer-foam') // Keep that Foam Rollin' Toward the Top! Yahooo!
-    .delay(3400)
+    .delay(2000)
     .animate({
       bottom: '280px'
       }, 2500);
 
   $('.tagline')
-    .delay(3400)
+    .delay(2000)
     .animate({
       bottom: '50px'
       }, 2500);
