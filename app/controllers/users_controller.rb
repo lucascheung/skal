@@ -1,6 +1,5 @@
-require 'pry-byebug'
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token, only:[:change_preference]
+  skip_before_action :verify_authenticity_token, only: [:change_preference]
   def index
     @swiped_id = []
     if current_user.swipes == []
@@ -19,5 +18,13 @@ class UsersController < ApplicationController
     user = current_user
     user.preference = params[:preference]
     user.save
+  end
+
+  def check_match
+    @swiped_user = User.find(params[:user_id])
+    @swiped = @swiped_user.swipes.map(&:swipee)
+    respond_to do |format|
+      format.js
+    end
   end
 end
