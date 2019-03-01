@@ -1,22 +1,14 @@
 class CouponsController < ApplicationController
-  before_action :set_coupon, only: [:show, :edit, :destroy, :expired?]
-
-  # use coupon
-  # check if coupon has expired
-  # change used from 0 to 1
-  # only show coupons that have 0 booleans
-  # add content message to coupon
-  # expired?
+  before_action :set_coupon, only: [:show, :edit, :expired?]
 
   def show
   end
 
   def create
-    used = 0
-    expiry_date = Time.now + (2*7*24*60*60)
-    location_verified = 1
-    content = "Free drinks"
-    Coupon.create(used: used, expiry_date: expiry_date, location_verified: location_verified, content: content)
+    expiry_date = Time.now + (1*7*24*60*60)
+    location_validated = 1
+    content = "2 free drink drink vouchers"
+    Coupon.create(used: used, expiry_date: expiry_date, location_validated: location_validated, content: content)
   end
 
   def edit
@@ -28,17 +20,9 @@ class CouponsController < ApplicationController
     true if @coupon.expiry_date < current_time
   end
 
-  def destroy
-    @coupon.delete
-  end
-
   private
 
-  def coupon_params
-    params.require(:coupon).permit(:expiry_date, :used, :location_verified)
-  end
-
   def set_coupon
-    @coupon = Coupon.find(params[:coupon_id])
+    @coupon = Coupon.find(params[:id])
   end
 end
