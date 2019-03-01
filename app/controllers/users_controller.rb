@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:change_preference]
+  skip_before_action :verify_authenticity_token, only: [:change_preference, :check_match]
   def index
     @swiped_id = []
     if current_user.swipes == []
@@ -23,8 +23,33 @@ class UsersController < ApplicationController
   def check_match
     @swiped_user = User.find(params[:user_id])
     @swiped = @swiped_user.swipes.map(&:swipee)
-    respond_to do |format|
-      format.js
+    if @swiped.include?(current_user)
+      create_match
+      render_page
     end
+  end
+
+  def render_page
+    puts "\n\n\n\n\n\n YOOOOOOOOO \n\n\n\n\n\n\n"
+    respond_to do |format|
+      format.js { render :check_match }
+    end
+  end
+
+  def create_match
+    bar = Bar.all.sample
+    initial_date = generate_meet_up_time
+    meet_up_time = MeetUpTime.create(meet_up_time: initial_date, first_user_accepted: false, last_user_accepted: false)
+    used = false
+    expiry_date = Time.now + (2 * 7 * 24 * 60 * 60)
+    location_validated = false
+    content = "1 free drink"
+    coupon = Coupon.create(used: used, expiry_date: expiry_date, location_validated: location_validated, content: content)
+    Match.create(first_user:current_user, last_user: @swiped_user, bar: bar, meet_up_time: meet_up_time, coupon: coupon)
+  end
+
+  def generate_meet_up_time
+    @date = rand(Date.today..Date.today + 14).to_datetime
+    return @date.change(hour: rand(17..22))
   end
 end
