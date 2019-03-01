@@ -13,5 +13,8 @@ Rails.application.routes.draw do
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'
     post 'swiped_left', to: 'swipes#swiped_left', as: 'swiped_left'
   end
+  get 'accept/:id', to: 'meet_up_times_controller#accept', as: 'accept'
+  get 'decline/:id', to: 'meet_up_times_controller#decline', as: 'decline'
+  # resources :coupons, only [:show, :edit, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
