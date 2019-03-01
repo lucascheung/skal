@@ -83,6 +83,7 @@ allCards.forEach(function(el) {
       initCards();
       if (toX > 0) {
         swipedRight(event.target.id);
+        checkMatch(event.target.id);
       } else {
         swipedLeft(event.target.id);
       }
@@ -91,7 +92,6 @@ allCards.forEach(function(el) {
 
   hammertime.on('tap', function(event) {
     let photos = JSON.parse(event.target.dataset.photos);
-    console.log(photos);
     let newIndex = photoIndex(photos, event);
     event.target.dataset.photoIdx = newIndex;
     let photo = photos[newIndex];
@@ -110,12 +110,21 @@ function photoIndex(photos, event) {
 }
 
 
+function checkMatch(card_id) {
+  console.log('checking match')
+  const user_id = card_id.substring(4);
+  let url = `users/${user_id}/check_match/`;
+  fetch( url, {
+    method: "GET",
+  })
+}
+
 function swipedRight(card_id) {
   const user_id = card_id.substring(4);
   console.log("swiped right");
   let url = `users/${user_id}/swiped_right/`;
   fetch( url, {
-    method: "POST",
+    method: "POST"
   })
 }
 

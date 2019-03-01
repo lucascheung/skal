@@ -9,7 +9,10 @@
       <% photo_urls = user.photos.map { |image| image.photo.url } %>
       <div class="tinder--card" data-photos="<%= JSON.generate(photo_urls) %>" data-photo-idx="0" id=<%= "card#{user.id}" %> style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0.8) 100%), url('<%= photo_urls[0] %>');" >
         <h3><%= "#{user.name}, #{user.age}" %></h3>
+        <%#= link_to 'checkmatch', user_check_match_path(user), remote: true %>
       </div>
     <% end %>
   </div>
 </div>
+
+<%#= render 'match_alert' %>

@@ -1,0 +1,11 @@
+.match_alert {
+  position:absolute;
+  top: 10vh;
+  bottom: 10vh;
+  left: 10vw;
+  right: 10vw;
+  background-color: black;
+  color: white;
+  z-index: 999;
+  display: none;
+}
