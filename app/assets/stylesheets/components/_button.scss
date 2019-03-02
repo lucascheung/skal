@@ -1,17 +1,17 @@
 .fb-signup {
-  background-color: $white;
+  background-color: #fefefe;
   padding: 10px;
   border-radius: 8px;
   text-decoration: none;
-  color: #4267b2;
+  color: #356888;
   &:hover {
     text-decoration: none;
-    color: #4267b2;
+    color: #356888;
   }
   &:active {
     text-decoration: none;
-    color: #4267b2;
-    background-color: $white;
+    color: #356888;
+    background-color: #fefefe;
   }
 }
 
@@ -21,6 +21,8 @@
   border-radius: 8px;
   text-decoration: none;
   color: $white;
+  position: absolute;
+  bottom: 8vh;
   &:hover {
     text-decoration: none;
     color: $white;
