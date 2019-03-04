@@ -1,0 +1,14 @@
+<%= render 'shared/navbar' %>
+<div class="match-show-container">
+  <h2>Grab a free drink at: </h2>
+  <div class="match-bar" style="background-image: url(<%= image_path @match.bar.photos[0].photo.url %>);">
+    <p><%= @match.bar.name %></p>
+  </div>
+
+  <h2>Meeting time</h2>
+
+  <p><%= @match.first_user.name %></p>
+  <p><%= @match.last_user.name %></p>
+
+
+</div>

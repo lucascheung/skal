@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     get 'check_match', to: 'users#check_match', as: 'check_match'
     resources :swipes, only: [:create]
+    resources :matches, only: [:index, :show]
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'
     post 'swiped_left', to: 'swipes#swiped_left', as: 'swiped_left'
   end
