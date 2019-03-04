@@ -33,3 +33,21 @@
     background-color: #ce6058;
   }
 }
+
+.btn-alert {
+  width: 70vw;
+  height: 10vh;
+  border-radius: 10vh;
+  text-decoration: none;
+  color: $white;
+  text-align: center;
+  margin-top: 3vh;
+  font-weight: bolder;
+  &.red {
+    background-color: #e07f78;
+  };
+  &.blue {
+    background-color: #559fce;
+  };
+};
+
