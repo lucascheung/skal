@@ -4,7 +4,7 @@ window.onload = function() {
 
 $(document).ready(function() {
   $('.pour') //Pour Me Another Drink, Bartender!
-    .delay(2000)
+    .delay(500)
     .animate({
       height: '400px'
       }, 1500)
@@ -12,20 +12,18 @@ $(document).ready(function() {
     .slideUp(500);
 
   $('#liquid') // I Said Fill 'Er Up!
-    .delay(2000)
+    .delay(500)
     .animate({
       height: '280px'
     }, 2500);
 
   $('.beer-foam') // Keep that Foam Rollin' Toward the Top! Yahooo!
-    .delay(2000)
+    .delay(500)
     .animate({
       bottom: '280px'
       }, 2500);
 
-  $('.tagline')
-    .delay(2000)
-    .animate({
-      bottom: '50px'
-      }, 2500);
+  $('.skal_logo')
+    .delay(2300)
+    .fadeIn(600);
 });

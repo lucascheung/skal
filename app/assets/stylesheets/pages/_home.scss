@@ -103,6 +103,14 @@ body.loaded {
   p {
     padding-top: 10vh;
   }
+
+  .skal_logo {
+    position:absolute;
+    top: 35vh;
+    height: 150px;
+    z-index: 4;
+    display:none;
+  }
 }
 
 #beer-container {
