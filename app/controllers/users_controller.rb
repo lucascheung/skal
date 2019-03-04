@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:change_preference, :check_match]
   def index
@@ -25,12 +27,14 @@ class UsersController < ApplicationController
     @swiped = @swiped_user.swipes.map(&:swipee)
     if @swiped.include?(current_user)
       create_match
-      render_page
+      render_page(@swiped_user)
+    else
+      render json: { match: false }
     end
   end
 
-  def render_page
-    render :match => 'true'
+  def render_page(swiped_user)
+    render json: { match: true, name: swiped_user.name, photo: swiped_user.photos[0].photo.url }
   end
 
   def create_match
