@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @male_on = current_user.preference == 'male' ? 'on' : ''
     @female_on = current_user.preference == 'female' ? 'on' : ''
   end
+
+  def messages
+    render 'pages/index'
+  end
 end

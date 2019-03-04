@@ -1,4 +1,5 @@
 require 'csv'
+require 'pry-byebug'
 
 Match.destroy_all
 Coupon.destroy_all
@@ -15,6 +16,10 @@ CSV.foreach('db/bars.csv', csv_options) do |row|
   Bar.create!(name:row['name'], location:row['location'], description:row['description'])
 end
 
+# puts "Creating male users"
+# CSV.foreach('db/male_users.csv', csv_options) do |row|
+#   User.create!(email:row['email'], password:row['password'], name:row['name'], age:row['age'], location:row['location'], gender:row['gender'], bio:row['bio'])
+# end
 
 puts "Creating male users"
 anders = User.create(email: "andersthorson@gmail.com", password: "123456", name: "Anders", age: 23, location: 'London', gender: 'male')
@@ -56,10 +61,10 @@ end
 
 
 
-def create_bar_photos(bar, dir)
+def create_bar_photos(bar, bar_name)
   photo_list = []
   3.times.each_with_index do |idx|
-    photo_list << "https://res.cloudinary.com/dcteumtl0/image/upload/v1551262327/skal/bars/#{dir}/#{idx+1}.jpg"
+    photo_list << "https://res.cloudinary.com/dcteumtl0/image/upload/v1551262327/skal/bars/#{bar_name}_#{idx+1}.jpg"
   end
   photo_list.each do |photo_url|
     photo = Photo.new(bar: bar)
@@ -84,3 +89,41 @@ create_user_photos(pam, 'pam')
 puts "Creating bar photos"
 bluedoor = Bar.first
 create_bar_photos(bluedoor, 'bluedoor')
+peters = Bar.second
+create_bar_photos(peters, 'peters')
+alibi = Bar.third
+create_bar_photos(alibi, 'alibi')
+dolphin = Bar.fourth
+create_bar_photos(dolphin, 'dolphin')
+zigfrig = Bar.fifth
+create_bar_photos(zigfrig, 'zigfrig')
+number90 = Bar.all[5]
+create_bar_photos(number90, 'number90')
+haggerston = Bar.all[6]
+create_bar_photos(haggerston, 'haggerston')
+
+
+puts "Creating coupons"
+CSV.foreach('db/coupons.csv', csv_options) do |row|
+  Coupon.create!(used: row['used'], expiry_date: row['expiry_date'].to_datetime)
+end
+
+puts "Creating meet up times"
+CSV.foreach('db/meet_up_times.csv', csv_options) do |row|
+  MeetUpTime.create!(
+      first_user_accepted: User.find_by_name(row['first_user_accepted']),
+      last_user_accepted: User.find_by_name(row['last_user_accepted']),
+      meet_up_time: row['meet_up_time'].to_datetime
+    )
+end
+
+puts "Creating matches"
+CSV.foreach('db/matches.csv', csv_options) do |row|
+  Match.create!(
+        first_user: User.find_by_name(row['first_user']),
+        last_user: User.find_by_name(row['last_user']),
+        bar: Bar.find_by_name(row['bar']),
+        meet_up_time: MeetUpTime.all.sample,
+        coupon: Coupon.all.sample
+    )
+end

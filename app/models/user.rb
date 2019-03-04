@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :swipes, foreign_key: "swiper_id", class_name: "Swipe"
   has_many :first_matches, foreign_key: "first_user_id", class_name: "Match"
   has_many :last_matches, foreign_key: "last_user_id", class_name: "Match"
+
+  # has_many :first_swipes, foreign_key: "first_user_accepted", class_name: "MeetUpTime"
+  # has_many :last_swipes, foreign_key: "last_user_accepted", class_name: "MeetUpTime"
+
   has_many :photos
   # has_many :swipes, foreign_key: "swipee_id", class_name: "Swipe"
 
