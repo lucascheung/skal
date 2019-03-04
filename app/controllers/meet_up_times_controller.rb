@@ -1,9 +1,8 @@
 class MeetUpTimesController < ApplicationController
   before_action :set_meetup, only: [:accept, :decline]
-
-  def date_generator
+  def generate_meet_up_time
     @date = rand(Date.today..Date.today + 7).to_datetime
-    @date = @date.change(hour: rand(17..22))
+    return @date.change(hour: rand(17..22))
   end
 
   def accept
@@ -18,7 +17,7 @@ class MeetUpTimesController < ApplicationController
   def decline
     @meetup.first_user_accepted = nil
     @meetup.last_user_accepted = nil
-    @meetup.meet_up_time = date_generator
+    @meetup.meet_up_time = generate_meet_up_time
     @meetup.save
   end
 

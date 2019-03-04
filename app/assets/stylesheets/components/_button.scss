@@ -1,17 +1,17 @@
 .fb-signup {
-  background-color: $white;
+  background-color: #fefefe;
   padding: 10px;
   border-radius: 8px;
   text-decoration: none;
-  color: #4267b2;
+  color: #356888;
   &:hover {
     text-decoration: none;
-    color: #4267b2;
+    color: #356888;
   }
   &:active {
     text-decoration: none;
-    color: #4267b2;
-    background-color: $white;
+    color: #356888;
+    background-color: #fefefe;
   }
 }
 
@@ -21,6 +21,8 @@
   border-radius: 8px;
   text-decoration: none;
   color: $white;
+  position: absolute;
+  bottom: 8vh;
   &:hover {
     text-decoration: none;
     color: $white;
@@ -31,3 +33,21 @@
     background-color: #ce6058;
   }
 }
+
+.btn-alert {
+  width: 70vw;
+  height: 10vh;
+  border-radius: 10vh;
+  text-decoration: none;
+  color: $white;
+  text-align: center;
+  margin-top: 3vh;
+  font-weight: bolder;
+  &.red {
+    background-color: #e07f78;
+  };
+  &.blue {
+    background-color: #559fce;
+  };
+};
+

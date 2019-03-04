@@ -5,6 +5,7 @@ var allCards = document.querySelectorAll(".tinder--card");
 var nope = document.getElementById("nope");
 var love = document.getElementById("love");
 
+
 function initCards(card, index) {
   var newCards = document.querySelectorAll(".tinder--card:not(.removed)");
 
@@ -110,12 +111,20 @@ function photoIndex(photos, event) {
 }
 
 
+
+
 function checkMatch(card_id) {
   console.log('checking match')
   const user_id = card_id.substring(4);
   let url = `users/${user_id}/check_match/`;
   fetch( url, {
-    method: "GET",
+    method: "GET"
+  })
+  .then(response => response.json())
+  .then((data) => {
+    if (data['match']) {
+      matchAlert(data);
+    }
   })
 }
 
@@ -137,4 +146,13 @@ function swipedLeft(card_id) {
   })
 }
 
+
+function matchAlert(data) {
+  var matchInsertModal = document.getElementById("match-modal-insert");
+  var title = matchInsertModal.querySelector(".modal-title");
+  var photo = matchInsertModal.querySelector(".match-modal-image");
+  title.innerHTML = `You've matched with ${data['name']}`;
+  photo.src = data.photo
+  $('#matchModal').modal('show');
+}
 
