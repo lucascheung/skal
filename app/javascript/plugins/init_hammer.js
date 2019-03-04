@@ -117,6 +117,10 @@ function checkMatch(card_id) {
   fetch( url, {
     method: "GET",
   })
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data);
+  })
 }
 
 function swipedRight(card_id) {
@@ -137,4 +141,9 @@ function swipedLeft(card_id) {
   })
 }
 
+function matchAlert() {
+  console.log("fuck you")
+  const matchAlert = document.querySelector('.match_alert');
+  matchAlert.style.display = 'block';
+}
 
