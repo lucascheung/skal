@@ -8,15 +8,16 @@ class MeetUpTimesController < ApplicationController
 
   def accept
     if @meetup.first_user_accepted
-      @meetup.last_user_accepted = true
+      @meetup.last_user_accepted = current_user
+      return true
     else
-      @meetup.first_user_accepted = true
+      @meetup.first_user_accepted = current_user
     end
   end
 
   def decline
-    @meetup.first_user_accepted = false
-    @meetup.last_user_accepted = false
+    @meetup.first_user_accepted = nil
+    @meetup.last_user_accepted = nil
     @meetup.meet_up_time = date_generator
     @meetup.save
   end

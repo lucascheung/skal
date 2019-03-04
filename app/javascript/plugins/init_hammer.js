@@ -65,7 +65,7 @@ allCards.forEach(function(el) {
         Math.abs(event.velocityX) * moveOutWidth,
         moveOutWidth
       );
-      var toX = event.deltaX > 0 ? endX : -endX;
+      var stoX = event.deltaX > 0 ? endX : -endX;
       var endY = Math.abs(event.velocityY) * moveOutWidth;
       var toY = event.deltaY > 0 ? endY : -endY;
       var xMulti = event.deltaX * 0.03;

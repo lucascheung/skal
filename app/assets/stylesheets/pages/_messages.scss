@@ -1,0 +1,179 @@
+ //default font ( sans-serif )
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+ //latest version of FA. it uses `fa, far, fab, fas, fal` for different styling, also redid ~100 icon names.
+ @import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+
+ //@import url("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css");
+
+ $alizarin:    #e74c3c;
+
+ .container-message-index {
+   width: 100%;
+   margin: 0 auto;
+   align-items: center;
+   text-align: left;
+   margin-left: 22px;
+   background-color: white;
+ }
+
+ //@include animate; anywhere for animation
+ @mixin animate {
+   transition: all 0.15s ease-in-out;
+ }
+
+
+ //always animate FontAwesome icons
+ .fa,.fas,.far,.fab,.fal {
+   @include animate;
+ }
+
+ .site-wrap {
+
+   //display: grid;
+   height: 100%;
+   width: 100%;
+
+   .main-content {
+   //grid-area: content;
+
+   }
+   .messages,.new-matches {
+     .header {
+       color: $alizarin;
+       font-weight: 800;
+       font-size: 1.5rem;
+       margin-bottom: 1rem;
+     }
+
+     .profile-img {
+       .image {
+         border-radius: 100%;
+         overflow: hidden;
+       }
+     }
+   }
+
+   .new-matches {
+     .matches {
+       display: flex;
+       margin-bottom: 1rem;
+
+       .match {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+         .name {
+           margin-top: 0.25rem;
+           font-size: 1.5rem;
+           font-weight: 800;
+         }
+
+         &:not(:last-child) {
+           margin-right: 1rem;
+         }
+       }
+     }
+   }
+
+   .messages {
+
+     .tinder-message {
+       display: flex;
+       align-items: center;
+
+       &:not(:last-child) {
+         margin-bottom: 1rem;
+       }
+
+       .content-wrap {
+         margin-left: 1rem;
+         .name {
+           font-weight: 600;
+         }
+         .snippet {
+           font-size: 1.5rem;
+           display: flex;
+
+           //.icon {
+           //  display: none;
+           //}
+           //
+           //&.is-sent .icon {
+           //  display: initial;
+           //}
+         }
+       }
+     }
+   }
+ }
+
+ #color-meetup {
+   color: red;
+   margin-top: 6px;
+   font-size: 50%;
+ }
+
+ .message {
+   display: flex;
+   align-items: center;
+   //padding: 20px;
+   padding-left: 20px;
+ }
+ .message-body {
+   flex-grow: 1;
+ }
+ //.message-name {
+ //  padding-left: 10px;
+ //  min-width: 100px;
+ //}
+ //.message-name h3 {
+ //  font-size: 13px;
+ //}
+ //.message-name p {
+ //  font-size: 13px;
+ //  font-weight: lighter;
+ //  opacity: 0.6;
+ //  margin-top: 5px;
+ //}
+ .message-body {
+   padding-left: 10px;
+   font-size: 13px;
+   //color: rgba(0,0,0,0.7);
+ }
+ .message-body {
+   //padding-left: 20px;
+   //color: rgba(0,0,0,0.4);
+ }
+ .message-body strong{
+   //color: rgba(0,0,0,0.9);
+   //color: rgba(0,0,0,0.9);
+ }
+ .message-body p {
+   margin: 3px 0;
+ }
+
+ .message-body h5 {
+   font-weight: bold;
+   margin: 3px 0;
+ }
+
+ .message-status {
+   font-size: 14px;
+   font-weight: bold;
+ }
+ .status.accepted {
+   color: #04A366;
+ }
+ .status.declined {
+   color: red;
+ }
+ .status.pending {
+   color: lightgrey;
+ }
+
+ .avatar-large {
+   width: 70px;
+   border-radius: 50%;
+ }

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
   get 'accept/:id', to: 'meet_up_times_controller#accept', as: 'accept'
   get 'decline/:id', to: 'meet_up_times_controller#decline', as: 'decline'
+  get 'messages', to: 'pages#messages', as: 'messages'
   # resources :coupons, only [:show, :edit, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
