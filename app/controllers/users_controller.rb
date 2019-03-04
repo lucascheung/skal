@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def render_page(swiped_user)
-    render json: { match: true, name: swiped_user.name, photo: swiped_user.photos[0].photo.url }
+    render json: { match: true, name: swiped_user.name, photo: swiped_user.photos[0].photo.url, match: @match.id, user: current_user.id }
   end
 
   def create_match
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     location_validated = false
     content = "1 free drink"
     coupon = Coupon.create(used: used, expiry_date: expiry_date, location_validated: location_validated, content: content)
-    Match.create(first_user:current_user, last_user: @swiped_user, bar: bar, meet_up_time: meet_up_time, coupon: coupon)
+    @match = Match.create(first_user:current_user, last_user: @swiped_user, bar: bar, meet_up_time: meet_up_time, coupon: coupon)
   end
 
   def generate_meet_up_time

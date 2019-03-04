@@ -66,7 +66,7 @@ allCards.forEach(function(el) {
         Math.abs(event.velocityX) * moveOutWidth,
         moveOutWidth
       );
-      var stoX = event.deltaX > 0 ? endX : -endX;
+      var toX = event.deltaX > 0 ? endX : -endX;
       var endY = Math.abs(event.velocityY) * moveOutWidth;
       var toY = event.deltaY > 0 ? endY : -endY;
       var xMulti = event.deltaX * 0.03;
@@ -151,8 +151,11 @@ function matchAlert(data) {
   var matchInsertModal = document.getElementById("match-modal-insert");
   var title = matchInsertModal.querySelector(".modal-title");
   var photo = matchInsertModal.querySelector(".match-modal-image");
+  var link = matchInsertModal.querySelector(".checkout");
   title.innerHTML = `You've matched with ${data['name']}`;
-  photo.src = data.photo
+  photo.src = data.photo;
+  link.setAttribute('href', `users/${data['user']}/matches/${data['match']}`);
+
   $('#matchModal').modal('show');
 }
 
