@@ -30,10 +30,7 @@ class UsersController < ApplicationController
   end
 
   def render_page
-    puts "\n\n\n\n\n\n YOOOOOOOOO \n\n\n\n\n\n\n"
-    respond_to do |format|
-      format.js { render :check_match }
-    end
+    render :match => 'true'
   end
 
   def create_match
