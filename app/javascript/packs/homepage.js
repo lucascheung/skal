@@ -14,13 +14,13 @@ $(document).ready(function() {
   $('#liquid') // I Said Fill 'Er Up!
     .delay(500)
     .animate({
-      height: '280px'
+      height: '50vh'
     }, 2500);
 
   $('.beer-foam') // Keep that Foam Rollin' Toward the Top! Yahooo!
     .delay(500)
     .animate({
-      bottom: '280px'
+      bottom: '48vh'
       }, 2500);
 
   $('.skal_logo')
