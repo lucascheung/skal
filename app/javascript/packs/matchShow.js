@@ -1,10 +1,10 @@
-// import hammertime from 'hammerjs';
 
 const acceptBtn = document.querySelector('.match-accept.btn-respond.accept')
 const declineBtn = document.querySelector('.match-decline.btn-respond.decline')
 
 const hammerAccept = new Hammer(acceptBtn);
 const hammerDecline = new Hammer(declineBtn);
+
 
 
 hammerAccept.on("tap", function(event) {
