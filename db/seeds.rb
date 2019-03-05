@@ -1,5 +1,4 @@
 require 'csv'
-require 'pry-byebug'
 
 Match.destroy_all
 Coupon.destroy_all
