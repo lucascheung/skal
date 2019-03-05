@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   def index
-    @matches = Match.where(first_user == current_user || last_user == current_user)
+    @matches = Match.where(first_user: current_user).or(Match.where(last_user: current_user))
   end
 
   def show
