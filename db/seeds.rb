@@ -7,20 +7,18 @@ MeetUpTime.destroy_all
 Swipe.destroy_all
 User.destroy_all
 
-def create_user_photos(user, url)
-  5.times.each_with_index do |idx|
-    photo_url = "https://res.cloudinary.com/dcteumtl0/image/upload/v1551190991/skal/users/#{url}#{idx+1}.jpg"
-    photo = Photo.new(user: user)
-    photo.remote_photo_url = photo_url
-    photo.save!
-  end
-end
+# def create_user_photos(user, url)
+#   5.times.each_with_index do |idx|
+#     photo = Photo.new(user: user)
+#     photo.remote_photo_url = "https://res.cloudinary.com/dcteumtl0/image/upload/v1551190991/skal/users/#{url}_#{idx+1}.jpg"
+#     photo.save!
+#   end
+# end
 
-def create_bar_photos(bar, url)
-  3.times.each_with_index do |idx|
-    photo_url = "https://res.cloudinary.com/dcteumtl0/image/upload/v1551262327/skal/bars/#{url}_#{idx+1}.jpg"
-    photo = Photo.new(bar: bar)
-    photo.remote_photo_url = photo_url
+def attach_photos(instance, attr, url_file, amount_photos)
+  amount_photos.times.each_with_index do |idx|
+    photo = Photo.new("#{attr}": instance)
+    photo.remote_photo_url = "https://res.cloudinary.com/dcteumtl0/image/upload/v1551262327/skal/#{attr}/#{url_file}_#{idx+1}.jpg"
     photo.save!
   end
 end
@@ -29,7 +27,7 @@ csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 
 puts "Creating male users"
 CSV.foreach('db/male_users.csv', csv_options) do |row|
-  user = User.create!(email:row['email'],
+  user_instance = User.create!(email:row['email'],
                password:row['password'],
                name:row['name'],
                age:row['age'],
@@ -37,12 +35,12 @@ CSV.foreach('db/male_users.csv', csv_options) do |row|
                gender:row['gender'],
                bio:row['bio']
   )
-  create_user_photos(user, row['name'].downcase)
+  attach_photos(user_instance, 'user', row['name'].downcase, 5)
 end
 
 puts "Creating female users"
 CSV.foreach('db/female_users.csv', csv_options) do |row|
-  user = User.create!(email:row['email'],
+  user_instance = User.create!(email:row['email'],
                       password:row['password'],
                       name:row['name'],
                       age:row['age'],
@@ -50,13 +48,13 @@ CSV.foreach('db/female_users.csv', csv_options) do |row|
                       gender:row['gender'],
                       bio:row['bio']
   )
-  create_user_photos(user, row['name'].downcase)
+  attach_photos(user_instance, 'user', row['name'].downcase, 5)
 end
 
 puts "Creating bars"
 CSV.foreach('db/bars.csv', csv_options) do |row|
-  bar = Bar.create!(name:row['name'], location:row['location'], description:row['description'])
-  create_bar_photos(bar, row['url'])
+  bar_instance = Bar.create!(name:row['name'], location:row['location'], description:row['description'])
+  attach_photos(bar_instance, 'bar', row['url'], 3)
 end
 
 # puts "Creating coupons"
