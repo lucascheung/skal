@@ -1,14 +1,13 @@
 <%= render 'shared/navbar' %>
 <div class="match-show-container">
-  <h2>Grab a free drink at: </h2>
-  <div class="match-bar" style="background-image: url(<%= image_path @match.bar.photos[0].photo.url %>);">
+  <div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%), url(<%= image_path @match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
     <p><%= @match.bar.name %></p>
   </div>
 
-  <h2>Meeting time</h2>
 
-  <p><%= @match.first_user.name %></p>
-  <p><%= @match.last_user.name %></p>
+
+  <h3>Meeting <%= @match.first_user == current_user ? @match.last_user.name : @match.first_user.name %></h3>
+  <p><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></p>
 
 
 </div>
