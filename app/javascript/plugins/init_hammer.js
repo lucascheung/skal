@@ -114,7 +114,7 @@ function photoIndex(photos, event) {
 
 
 function checkMatch(card_id) {
-  console.log('checking match')
+  console.log('checking match');
   const user_id = card_id.substring(4);
   let url = `users/${user_id}/check_match/`;
   fetch( url, {
@@ -122,6 +122,7 @@ function checkMatch(card_id) {
   })
   .then(response => response.json())
   .then((data) => {
+    console.log(data)
     if (data['match']) {
       matchAlert(data);
     }
@@ -148,6 +149,7 @@ function swipedLeft(card_id) {
 
 
 function matchAlert(data) {
+  console.log('show alert')
   var matchInsertModal = document.getElementById("match-modal-insert");
   var title = matchInsertModal.querySelector(".modal-title");
   var photo = matchInsertModal.querySelector(".match-modal-image");

@@ -102,27 +102,27 @@ haggerston = Bar.find_by_name('The Haggerston')
 create_bar_photos(haggerston, 'haggerston')
 
 
-puts "Creating coupons"
-CSV.foreach('db/coupons.csv', csv_options) do |row|
-  Coupon.create!(used: row['used'], expiry_date: row['expiry_date'].to_datetime)
-end
+# puts "Creating coupons"
+# CSV.foreach('db/coupons.csv', csv_options) do |row|
+#   Coupon.create!(used: row['used'], expiry_date: row['expiry_date'].to_datetime)
+# end
 
-puts "Creating meet up times"
-CSV.foreach('db/meet_up_times.csv', csv_options) do |row|
-  MeetUpTime.create!(
-      first_user_accepted: User.find_by_name(row['first_user_accepted']),
-      last_user_accepted: User.find_by_name(row['last_user_accepted']),
-      meet_up_time: row['meet_up_time'].to_datetime
-    )
-end
+# puts "Creating meet up times"
+# CSV.foreach('db/meet_up_times.csv', csv_options) do |row|
+#   MeetUpTime.create!(
+#       first_user_accepted: User.find_by_name(row['first_user_accepted']),
+#       last_user_accepted: User.find_by_name(row['last_user_accepted']),
+#       meet_up_time: row['meet_up_time'].to_datetime
+#     )
+# end
 
-puts "Creating matches"
-CSV.foreach('db/matches.csv', csv_options) do |row|
-  Match.create!(
-        first_user: User.find_by_name(row['first_user']),
-        last_user: User.find_by_name(row['last_user']),
-        bar: Bar.find_by_name(row['bar']),
-        meet_up_time: MeetUpTime.all.sample,
-        coupon: Coupon.all.sample
-    )
-end
+# puts "Creating matches"
+# CSV.foreach('db/matches.csv', csv_options) do |row|
+#   Match.create!(
+#         first_user: User.find_by_name(row['first_user']),
+#         last_user: User.find_by_name(row['last_user']),
+#         bar: Bar.find_by_name(row['bar']),
+#         meet_up_time: MeetUpTime.all.sample,
+#         coupon: Coupon.all.sample
+#     )
+# end
