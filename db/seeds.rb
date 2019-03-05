@@ -87,19 +87,19 @@ create_user_photos(caro, 'caro')
 create_user_photos(pam, 'pam')
 
 puts "Creating bar photos"
-bluedoor = Bar.first
+bluedoor = Bar.find_by_name('The Little Blue Door')
 create_bar_photos(bluedoor, 'bluedoor')
-peters = Bar.second
+peters = Bar.find_by_name('Peters & Co. Gin Palace')
 create_bar_photos(peters, 'peters')
-alibi = Bar.third
+alibi = Bar.find_by_name('THE ALIBI')
 create_bar_photos(alibi, 'alibi')
-dolphin = Bar.fourth
+dolphin = Bar.find_by_name('The Dolphin')
 create_bar_photos(dolphin, 'dolphin')
-zigfrig = Bar.fifth
+zigfrig = Bar.find_by_name('Zigfrid Von Underbelly')
 create_bar_photos(zigfrig, 'zigfrig')
-number90 = Bar.all[5]
+number90 = Bar.find_by_name('Number 90')
 create_bar_photos(number90, 'number90')
-haggerston = Bar.all[6]
+haggerston = Bar.find_by_name('The Haggerston')
 create_bar_photos(haggerston, 'haggerston')
 
 
