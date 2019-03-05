@@ -1,33 +1,32 @@
 <%= render 'shared/navbar' %>
 <div class="new-matches-container">
   <div class="site-wrap">
-    <!--      <div class="new-matches">-->
-    <!--        <div class="header">NEW MATCHES</div>-->
-    <!--        <div class="matches">-->
-    <!--          <div class="match">-->
-    <!--            <div class="profile-img">-->
-    <!--              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">-->
-    <!--            </div>-->
-    <!--          <div class="name">Faith</div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
     <div class="messages">
       <div class="header">MATCHES</div>
     </div>
   </div>
 </div>
-<% @matches.each do |match| %>
-  <div class="message">
-    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-    <div class="message-body">
-      <h6><%= match.first_user == current_user ? match.last_user : match.first_user %></h6>
-      <p>
-        <%= match.coupon.content %>
-      </p>
-    </div>
-    <div class="message-status">
-      <i id="color-meetup" class="fas fa-circle"></i>
-    </div>
-  </div>
+  <% @matches.each do |match| %>
+    <%= link_to user_match_path(current_user, match), class: 'link-decoration' do %>
+      <div class="message">
+        <img class="avatar-large" src="<%= match.first_user == current_user ? match.last_user.photos.first.photo : match.first_user.photos.first.photo %>">
+        <div class="message-body">
+          <h6><%= match.first_user == current_user ? match.last_user.name : match.first_user.name %></h6>
+          <p>
+            <%= match.coupon.content %>
+          </p>
+        </div>
+        <div class="message-status">
+          <% if match.coupon.used %>
+            <i class="used fas fa-circle"></i>
+          <% elsif match.coupon.in_past? && match.meet_up_time.one_pending? %>
+            <i class="expired fas fa-circle"></i>
+          <% elsif match.coupon.in_future? && match.meet_up_time.one_pending? %>
+            <i class="yet-agreed fas fa-circle"></i>
+          <% elsif match.coupon.in_future? && match.meet_up_time.both_accepted?  %>
+            <i class="pending fas fa-circle"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 <% end %>
