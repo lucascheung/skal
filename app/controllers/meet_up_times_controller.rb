@@ -19,11 +19,12 @@ class MeetUpTimesController < ApplicationController
 
   def decline
     meetup = Match.find(params[:match_id])
-    meet_up_time = meetup.meet_up_time
-    meet_up_time.first_user_accepted = false
-    meet_up_time.last_user_accepted = false
-    meet_up_time.meet_up_time = generate_meet_up_time
-    meet_up_time.save
+    meet_time = meetup.meet_up_time
+    meet_time.first_user_accepted = false
+    meet_time.last_user_accepted = false
+    meet_time.meet_up_time = generate_meet_up_time
+    meet_time.save
+    render json: { new_time: meet_time.meet_up_time.strftime("%d %B at %l:%M%p") }
   end
 
   def confirmed?
