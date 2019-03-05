@@ -26,4 +26,5 @@ $(document).ready(function() {
   $('.skal_logo')
     .delay(2300)
     .fadeIn(600);
+
 });

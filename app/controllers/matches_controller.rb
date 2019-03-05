@@ -5,5 +5,6 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
+    @your_date = @match.first_user == current_user ? @match.last_user : @match.first_user
   end
 end

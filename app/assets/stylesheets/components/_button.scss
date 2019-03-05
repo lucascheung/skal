@@ -53,3 +53,22 @@
   };
 };
 
+.btn-respond {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.accept{
+    border: 2px solid green;
+    color: green;
+  }
+  &.decline {
+    border: 2px solid red;
+    color: red;
+  }
+
+}
+
