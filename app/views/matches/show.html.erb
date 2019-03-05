@@ -1,13 +1,37 @@
-<%= render 'shared/navbar' %>
+<div class="navbar-wagon">
+  <div class="go-back">
+    <%= link_to users_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class="avatar-with-name">
+    <%= image_tag @your_date.photos[0].photo.url, class:'avatar', alt: "alttext" %>
+    <p><%= @your_date.name %></p>
+  </div>
+  <div class='placeholder'></div>
+</div>
 <div class="match-show-container">
-  <div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%), url(<%= image_path @match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
-    <p><%= @match.bar.name %></p>
+
+  <div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.9) 100%), url(<%= image_path @match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
+    <div class="bar-content">
+      <p><%= @match.bar.name %></p>
+      <div class="bar-icons">
+        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-directions"></i>
+      </div>
+    </div>
   </div>
 
+  <div class="match-ask-time">
+    <p>Are you free to meet <%= @your_date.name %> on the</p>
+    <h3><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></h3>
+    <p>with a free drink?</p>
+  </div>
 
-
-  <h3>Meeting <%= @match.first_user == current_user ? @match.last_user.name : @match.first_user.name %></h3>
-  <p><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></p>
-
+  <div class="match-response">
+    <div class="match-accept btn-respond accept">HELL YES</div>
+    <div class="match-decline btn-respond decline">ANOTHER TIME</div>
+  </div>
 
 </div>
+  <!-- <div class="match-user" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%), url(<%= image_path @your_date.photos[0].photo.url %>); background-position: center; background-size: cover;"></div> -->
