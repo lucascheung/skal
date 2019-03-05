@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b1a6037-db85-4232-a0d9-7171fcbe8ccc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-    </list>
+    <list default="true" id="4b1a6037-db85-4232-a0d9-7171fcbe8ccc" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -51,7 +49,7 @@
         <counts>
           <entry key="csv" value="239" />
           <entry key="erb" value="1077" />
-          <entry key="rb" value="2009" />
+          <entry key="rb" value="2286" />
           <entry key="scss" value="866" />
         </counts>
       </usages-collector>
@@ -59,7 +57,7 @@
         <counts>
           <entry key="CSV" value="239" />
           <entry key="RHTML" value="1077" />
-          <entry key="Ruby" value="2009" />
+          <entry key="Ruby" value="2286" />
           <entry key="SCSS" value="866" />
         </counts>
       </usages-collector>
@@ -115,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+            <state relative-caret-position="460">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -136,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/male_users.csv">
           <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="40">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="10" />
             </state>
           </provider>
           <provider editor-type-id="csv-table-editor">
@@ -490,12 +488,12 @@
       <updated>1551186330302</updated>
       <workItem from="1551186331671" duration="1299000" />
       <workItem from="1551257241981" duration="5771000" />
-      <workItem from="1551774224340" duration="22723000" />
+      <workItem from="1551774224340" duration="28399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43298000" />
+    <option name="totallyTimeSpent" value="48974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-30" width="1920" height="1110" extended-state="6" />
@@ -804,26 +802,6 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/bars.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/male_users.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190225104924_create_bars.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -845,10 +823,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/bars.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/male_users.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+        <state relative-caret-position="460">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
     </entry>
