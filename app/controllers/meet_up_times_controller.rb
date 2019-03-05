@@ -1,30 +1,35 @@
+require 'pry-byebug'
 class MeetUpTimesController < ApplicationController
-  before_action :set_meetup, only: [:accept, :decline]
+  skip_before_action :verify_authenticity_token, only: [:accept, :decline]
   def generate_meet_up_time
     @date = rand(Date.today..Date.today + 7).to_datetime
     return @date.change(hour: rand(17..22))
   end
 
   def accept
-    if @meetup.first_user_accepted
-      @meetup.last_user_accepted = current_user
-      return true
+    meetup = Match.find(params[:match_id])
+    meet_up_time = meetup.meet_up_time
+    if meetup.first_user == current_user
+      meet_up_time.first_user_accepted = true
     else
-      @meetup.first_user_accepted = current_user
+      meet_up_time.last_user_accepted = true
     end
+    meet_up_time.save
   end
 
   def decline
-    @meetup.first_user_accepted = nil
-    @meetup.last_user_accepted = nil
-    @meetup.meet_up_time = generate_meet_up_time
-    @meetup.save
+    meetup = Match.find(params[:match_id])
+    meet_up_time = meetup.meet_up_time
+    meet_up_time.first_user_accepted = false
+    meet_up_time.last_user_accepted = false
+    meet_up_time.meet_up_time = generate_meet_up_time
+    meet_up_time.save
   end
 
-  private
-
-  def set_meetup
-    @meetup = MeetUpTime.find(params[:id])
+  def confirmed?
+    meetup = Match.find(params[:match_id])
+    meet_up_time = meetup.meet_up_time
+    meet_up_time.first_user_accepted && meet_up_time.last_user_accepted
   end
 end
 
