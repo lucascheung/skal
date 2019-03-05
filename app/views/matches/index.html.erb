@@ -7,7 +7,7 @@
   </div>
 </div>
   <% @matches.each do |match| %>
-    <%= link_to user_match_path(current_user, match) do %>
+    <%= link_to user_match_path(current_user, match), class: 'link-decoration' do %>
       <div class="message">
         <img class="avatar-large" src="<%= match.first_user == current_user ? match.last_user.photos.first.photo : match.first_user.photos.first.photo %>">
         <div class="message-body">
