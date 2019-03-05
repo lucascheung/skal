@@ -6,11 +6,20 @@ const declineBtn = document.querySelector('.match-decline.btn-respond.decline')
 const hammerAccept = new Hammer(acceptBtn);
 const hammerDecline = new Hammer(declineBtn);
 
-hammerAccept.on("tap", function(event) {
+// hammerAccept.on("press", function(event) {
+//   $('.match-liquid.green')
+//     .animate({
+//       height: '20vh'
+//     }, 500);
+// });
+
+hammerAccept.on("pressup", function(event) {
   accept();
 });
 
-hammerDecline.on("tap", function(event) {
+
+
+hammerDecline.on("pressup", function(event) {
   decline();
 });
 
