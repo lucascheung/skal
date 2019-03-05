@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b1a6037-db85-4232-a0d9-7171fcbe8ccc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/anders1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/anders2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/anders3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/anders4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/anders5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/angela1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/angela2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/angela3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/angela4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/angela5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/caro1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/caro2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/caro3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/caro4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/caro5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/marie1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/marie2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/marie3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/marie4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/marie5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/matt1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/matt2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/matt3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/matt4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/matt5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/oliver1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/oliver2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/oliver3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/oliver4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/oliver5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/sara1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/sara2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/sara3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/sara4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/sara5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/tom1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/tom2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/tom3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/tom4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/users/tom5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-    </list>
+    <list default="true" id="4b1a6037-db85-4232-a0d9-7171fcbe8ccc" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -156,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="460">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -531,12 +488,12 @@
       <updated>1551186330302</updated>
       <workItem from="1551186331671" duration="1299000" />
       <workItem from="1551257241981" duration="5771000" />
-      <workItem from="1551774224340" duration="27977000" />
+      <workItem from="1551774224340" duration="28399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48552000" />
+    <option name="totallyTimeSpent" value="48974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-30" width="1920" height="1110" extended-state="6" />
@@ -888,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="460">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
     </entry>
