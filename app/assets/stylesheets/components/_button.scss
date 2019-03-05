@@ -54,21 +54,28 @@
 };
 
 .btn-respond {
-  width: 20vh;
-  height: 20vh;
-  border-radius: 8px;
+  width: 25vh;
+  height: 10vh;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  transition: all 3s ease;
   &.accept{
-    border: 2px solid green;
-    color: green;
+    background-color: #6ad48c;
+    color: $white;
+    border-radius: 8px 0 0 8px;
   }
   &.decline {
-    border: 2px solid red;
-    color: red;
+    background-color: #c78282;
+    color: $white;
+    border-radius: 0 8px 8px 0;
   }
+}
 
+.pressed-down {
+  background-color: green;
+  color: $white !important;
 }
 

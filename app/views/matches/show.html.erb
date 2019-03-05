@@ -23,14 +23,24 @@
   </div>
 
   <div class="match-ask-time">
-    <p>Are you free to meet <%= @your_date.name %> on the</p>
+    <p>Are you free to meet <strong><%= @your_date.name %></strong> on the</p>
     <h3><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></h3>
-    <p>with a free drink?</p>
+    <p>with a <strong>free drink</strong>?</p>
   </div>
 
   <div class="match-response">
-    <div class="match-accept btn-respond accept" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">HELL YES</div>
-    <div class="match-decline btn-respond decline" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">ANOTHER TIME</div>
+    <div class="accept-box">
+      <div class="match-accept btn-respond accept" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">HELL YES
+        <div class="match-liquid green"></div>
+      </div>
+
+    </div>
+    <div class="decline-box">
+      <div class="match-decline btn-respond decline" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">
+        ANOTHER TIME
+        <div class="match-liquid red"></div>
+      </div>
+    </div>
   </div>
 
 </div>

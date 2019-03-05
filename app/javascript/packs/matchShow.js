@@ -6,9 +6,21 @@ const declineBtn = document.querySelector('.match-decline.btn-respond.decline')
 const hammerAccept = new Hammer(acceptBtn);
 const hammerDecline = new Hammer(declineBtn);
 
-hammerAccept.on("tap", function(event) {
-  accept();
+// hammerAccept.on("press", function(event) {
+//   $('.match-liquid.green')
+//     .animate({
+//       height: '20vh'
+//     }, 500);
+// });
 
+hammerAccept.on("pressup", function(event) {
+  accept();
+});
+
+
+
+hammerDecline.on("pressup", function(event) {
+  decline();
 });
 
 function accept() {
@@ -18,5 +30,21 @@ function accept() {
   let url = `/users/${user_id}/matches/${match_id}/accept`
   fetch( url, {
     method: "POST"
+  })
+
+}
+
+function decline() {
+  console.log("running decline")
+  const meet_time = document.querySelector('.match-ask-time h3');
+  const user_id = acceptBtn.dataset.user;
+  const match_id = acceptBtn.dataset.match;
+  let url = `/users/${user_id}/matches/${match_id}/decline`
+  fetch( url, {
+    method: "POST"
+  })
+  .then(response => response.json())
+  .then((data) => {
+    meet_time.innerHTML = data['new_time'];
   })
 }
