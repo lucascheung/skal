@@ -16,7 +16,9 @@
     <div class="bar-content">
       <p><%= @match.bar.name %></p>
       <div class="bar-icons">
-        <i class="fas fa-info-circle"></i>
+        <%= link_to user_match_bar_path(current_user, @match) do %>
+          <i class="fas fa-info-circle"></i>
+        <% end %>
         <i class="fas fa-directions"></i>
       </div>
     </div>
