@@ -14,6 +14,7 @@ class CouponsController < ApplicationController
 
   def used
     @coupon.used = true
+    @coupon.save!
   end
 
   def expired?
@@ -22,7 +23,7 @@ class CouponsController < ApplicationController
   end
 
   private
-  
+
   def set_coupon
     @coupon = Coupon.find(params[:id])
   end

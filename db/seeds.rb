@@ -104,7 +104,7 @@ create_bar_photos(haggerston, 'haggerston')
 
 puts "Creating coupons"
 CSV.foreach('db/coupons.csv', csv_options) do |row|
-  Coupon.create!(used: row['used'], expiry_date: row['expiry_date'].to_datetime)
+  Coupon.create!(used: row['used'], expiry_date: row['expiry_date'].to_datetime, content: row['content'])
 end
 
 puts "Creating meet up times"
