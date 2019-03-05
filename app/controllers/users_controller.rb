@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     location_validated = false
     content = "1 free drink"
     coupon = Coupon.create(used: used, expiry_date: expiry_date, location_validated: location_validated, content: content)
-    @match = Match.create(first_user:current_user, last_user: @swiped_user, bar: bar, meet_up_time: meet_up_time, coupon: coupon)
+    @match = Match.create(first_user: current_user, last_user: @swiped_user, bar: bar, meet_up_time: meet_up_time, coupon: coupon)
   end
 
   def generate_meet_up_time
