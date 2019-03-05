@@ -11,3 +11,4 @@ class MeetUpTime < ApplicationRecord
     last_user_accepted.nil? || first_user_accepted.nil?
   end
 end
+
