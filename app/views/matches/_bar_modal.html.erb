@@ -2,9 +2,12 @@
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
-      <div id="bar-modal-insert" class="modal-body">
+      <div id="bar-modal-insert" class="bar-modal-body">
         <h2 class="modal-title"></h2>
-        <% user.photos.each do |image| %>
+        <% bar.photos.each_with_index do |image, idx| %>
+          <% if idx == 1  %>
+            <div class="bar-description"><%= bar.description %></div>
+          <% end %>
           <%= image_tag image.photo.url, class:'bar-modal-image', alt: "alttext" %>
         <% end %>
         <a type="button" href="#" class="btn-close stick" data-dismiss="modal"><i class="fas fa-times"></i></a>
