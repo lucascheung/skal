@@ -2,9 +2,7 @@
   <div class="bar-content">
     <p><%= the_match.bar.name %></p>
     <div class="bar-icons">
-      <%= link_to user_match_bar_path(current_user, the_match) do %>
-        <i class="fas fa-info-circle"></i>
-      <% end %>
+      <i class="fas fa-info-circle" data-toggle="modal" data-target=".bar-modal"></i>
       <i class="fas fa-directions"></i>
     </div>
   </div>

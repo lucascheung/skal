@@ -1,0 +1,14 @@
+<div id="barModal" class="modal fade bar-modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div id="bar-modal-insert" class="modal-body">
+        <h2 class="modal-title"></h2>
+        <% user.photos.each do |image| %>
+          <%= image_tag image.photo.url, class:'bar-modal-image', alt: "alttext" %>
+        <% end %>
+        <a type="button" href="#" class="btn-close stick" data-dismiss="modal"><i class="fas fa-times"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
