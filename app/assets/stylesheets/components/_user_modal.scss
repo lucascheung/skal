@@ -1,0 +1,30 @@
+.user-modal {
+  .modal-content {
+    background-color: rgba(255,255,255,0.85);
+    height: 95vh;
+    width: 95vw;
+    border-radius: 10px;
+    .close {
+      position: absolute;
+      top: 3vh;
+      right: 3vh;
+    }
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  .user-modal-image {
+    width: 36vh;
+    height: 36vh;
+    border-radius: 18vh;
+    margin: 30px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
