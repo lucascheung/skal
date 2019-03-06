@@ -54,6 +54,9 @@
   .match-both-accept {
     display:none;
     text-align: center;
+    p {
+      margin: 0;
+    }
   }
 
   .match-opposite-responded {
@@ -72,6 +75,18 @@
       width: 35px;
       border-radius: 50%;
     }
+  }
+
+  .coupon {
+    background-color: #ffc635;
+    color: $white;
+    font-size: 4vh;
+    width: 50vh;
+    height: 10vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .match-liquid {
