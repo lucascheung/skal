@@ -15,8 +15,9 @@ function initCards(card, index) {
       "scale(" + (20 - index) / 20 + ") translateY(-" + 20.1 * index + "px)";
     card.style.opacity = (10 - index) / 10;
   });
-
-  tinderContainer.classList.add("loaded");
+  if (tinderContainer) {
+    tinderContainer.classList.add("loaded");
+  }
 }
 
 initCards();
