@@ -1,0 +1,11 @@
+<div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.9) 100%), url(<%= image_path the_match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
+  <div class="bar-content">
+    <p><%= the_match.bar.name %></p>
+    <div class="bar-icons">
+      <%= link_to user_match_bar_path(current_user, the_match) do %>
+        <i class="fas fa-info-circle"></i>
+      <% end %>
+      <i class="fas fa-directions"></i>
+    </div>
+  </div>
+</div>

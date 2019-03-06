@@ -1,41 +1,8 @@
-<div class="navbar-wagon">
-  <div class="go-back">
-    <%= link_to user_matches_path(current_user) do %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
-  </div>
-  <div class="avatar-with-name" data-toggle="modal" data-target=".user-modal">
-    <%= image_tag @your_date.photos[0].photo.url, class:'avatar', alt: "alttext" %>
-    <p><%= @your_date.name %></p>
-  </div>
-  <div class='placeholder'></div>
-</div>
+<%= render 'match_navbar', user: @your_date %>
+
 <div class="match-show-container">
-
-  <div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.9) 100%), url(<%= image_path @match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
-    <div class="bar-content">
-      <p><%= @match.bar.name %></p>
-      <div class="bar-icons">
-        <%= link_to user_match_bar_path(current_user, @match) do %>
-          <i class="fas fa-info-circle"></i>
-        <% end %>
-        <i class="fas fa-directions"></i>
-      </div>
-    </div>
-  </div>
-
-  <div class="match-ask-time">
-    <p>Are you free to meet <strong><%= @your_date.name %></strong> on the</p>
-    <h3><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></h3>
-    <p>with a <strong>free drink</strong>?</p>
-  </div>
-
-  <div class="match-response">
-    <div class="match-accept btn-respond accept" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">HELL YES</div>
-
-    <div class="match-decline btn-respond decline" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">
-      ANOTHER TIME</div>
-  </div>
+  <%= render 'match_bar', the_match: @match %>
+  <%= render 'match_ask_time', user: @your_date %>
 </div>
 
 <%= render 'user_modal', user: @your_date %>

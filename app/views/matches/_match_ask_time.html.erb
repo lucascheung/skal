@@ -1,0 +1,12 @@
+<div class="match-ask-time">
+  <p>Are you free to meet <strong><%= user.name %></strong> on the</p>
+  <h3><%= @match.meet_up_time.meet_up_time.strftime("%d %B at %l:%M%p")%></h3>
+  <p>with a <strong>free drink</strong>?</p>
+</div>
+
+<div class="match-response">
+  <div class="match-accept btn-respond accept" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">HELL YES</div>
+
+  <div class="match-decline btn-respond decline" data-user="<%= current_user.id %>" data-match="<%= @match.id %>">
+    ANOTHER TIME</div>
+</div>
