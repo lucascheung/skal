@@ -16,7 +16,7 @@
             <%= match.coupon.content %>
           </p>
         </div>
-        <div class="message-status">
+        <div class="message-status" >
           <% if match.coupon.used %>
             <i class="used fas fa-circle"></i>
           <% elsif match.coupon.in_past? && match.meet_up_time.one_pending? %>
