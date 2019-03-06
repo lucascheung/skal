@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :matches, only: [:index, :show] do
       post 'accept', to: 'meet_up_times#accept', as: 'accept'
       post 'decline', to: 'meet_up_times#decline', as: 'decline'
+      post 'confirmed', to: 'meet_up_times#confirmed?', as: 'confirmed'
       resources :bars, only: [:show]
     end
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'

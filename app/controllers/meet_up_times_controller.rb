@@ -1,5 +1,5 @@
 class MeetUpTimesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:accept, :decline]
+  skip_before_action :verify_authenticity_token, only: [:accept, :decline, :confirmed?]
   def generate_meet_up_time
     @date = rand(Date.today..Date.today + 7).to_datetime
     return @date.change(hour: rand(17..22))
@@ -23,13 +23,17 @@ class MeetUpTimesController < ApplicationController
     meet_time.last_user_accepted = false
     meet_time.meet_up_time = generate_meet_up_time
     meet_time.save
-    render json: { new_time: meet_time.meet_up_time.strftime("%d %B at %l:%M%p") }
+    render json: { new_time: meet_time.meet_up_time.strftime("%e %B at %l:%M%p") }
   end
 
   def confirmed?
     meetup = Match.find(params[:match_id])
-    meet_up_time = meetup.meet_up_time
-    meet_up_time.first_user_accepted && meet_up_time.last_user_accepted
+    meet_time = meetup.meet_up_time
+    if meet_time.first_user_accepted && meet_time.last_user_accepted
+      render json: { confirmed: true }
+    else
+      render json: { confirmed: false }
+    end
   end
 end
 
