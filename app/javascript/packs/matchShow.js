@@ -1,4 +1,3 @@
-
 const acceptBtn = document.querySelector('.match-accept.btn-respond.accept')
 const declineBtn = document.querySelector('.match-decline.btn-respond.decline')
 
@@ -9,6 +8,7 @@ const hammerDecline = new Hammer(declineBtn);
 
 hammerAccept.on("tap", function(event) {
   accept();
+  confirmed();
 });
 
 
@@ -40,5 +40,24 @@ function decline() {
   .then(response => response.json())
   .then((data) => {
     meet_time.innerHTML = data['new_time'];
+  })
+}
+
+function confirmed() {
+  console.log('running confirmed')
+  const user_id = acceptBtn.dataset.user;
+  const match_id = acceptBtn.dataset.match;
+  let url = `/users/${user_id}/matches/${match_id}/confirmed`
+  fetch( url, {
+    method: "POST"
+  })
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data);
+    if (data['confirmed']) {
+      console.log('they have both accepted');
+    } else {
+      console.log('waiting for match to respond')
+    }
   })
 }
