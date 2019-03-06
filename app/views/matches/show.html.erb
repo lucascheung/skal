@@ -3,6 +3,9 @@
 <div class="match-show-container">
   <%= render 'match_bar', the_match: @match %>
   <%= render 'match_ask_time', user: @your_date %>
+  <%= render 'match_accept_waiting', user: @your_date %>
+  <%= render 'match_opposite_responded', user: @your_date %>
+  <%= render 'match_both_accept', user: @your_date %>
 </div>
 
 <%= render 'user_modal', user: @your_date %>
