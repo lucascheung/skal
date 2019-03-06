@@ -266,7 +266,7 @@ Devise.setup do |config|
                   "2dd16442e4925083b092e616ab182c22",
                   token_params: { parse: :json },
                   image_size: { width: 600 },
-                  :scope => 'email, user_birthday',
+                  :scope => 'email, user_birthday, user_gender',
                   info_fields: 'email, name, first_name, gender, birthday'
                   #user_gender, user_location, user_birthday, user_photos
   #, callback_url: "http://skal-dating.herokuapp.com/users/auth/facebook/callback"

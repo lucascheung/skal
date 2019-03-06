@@ -27,7 +27,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.first_name
-      user.gender = auth.extra.raw_info.gender # assuming the user model has a name
+      user.gender = auth.extra.raw_info.gender
       user.image = auth.info.image
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       user.preference = user.gender == 'male' ? 'female' : 'male'
