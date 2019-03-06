@@ -6,7 +6,7 @@ class MeetUpTime < ApplicationRecord
   end
 
   def one_pending?
-    last_user_accepted.nil? || first_user_accepted.nil?
+    last_user_accepted == false || first_user_accepted == false
   end
 end
 
