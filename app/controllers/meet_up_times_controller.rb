@@ -30,10 +30,13 @@ class MeetUpTimesController < ApplicationController
     meetup = Match.find(params[:match_id])
     meet_time = meetup.meet_up_time
     if meet_time.first_user_accepted && meet_time.last_user_accepted
-      render json: { confirmed: true }
+      render json: { confirmed: 'confirmed' }
+    elsif (meetup.first_user == current_user && meet_time.first_user_accepted) || (meetup.last_user == current_user && meet_time.last_user_accepted)
+      render json: { confirmed: 'current_accepted' }
+    elsif !meet_time.first_user_accepted && !meet_time.last_user_accepted
+      render json: { confirmed: 'no_one_accepted' }
     else
-      render json: { confirmed: false }
+      render json: { confirmed: 'match_accepted' }
     end
   end
 end
-

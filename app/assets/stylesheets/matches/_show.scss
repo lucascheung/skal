@@ -50,6 +50,30 @@
     display: flex;
     justify-content: center;
   }
+
+  .match-both-accept {
+    display:none;
+    text-align: center;
+  }
+
+  .match-opposite-responded {
+    display:none;
+    text-align: center;
+  }
+
+  .match-accept-waiting {
+    display:none;
+    text-align: center;
+    p {
+      padding: 5vh;
+    }
+    .avatar {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+    }
+  }
+
   .match-liquid {
     width: 20vh;
     border-radius: 8px;
