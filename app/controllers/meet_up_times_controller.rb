@@ -1,4 +1,3 @@
-require 'pry-byebug'
 class MeetUpTimesController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:accept, :decline]
   def generate_meet_up_time

@@ -13,11 +13,11 @@ Rails.application.routes.draw do
     resources :matches, only: [:index, :show] do
       post 'accept', to: 'meet_up_times#accept', as: 'accept'
       post 'decline', to: 'meet_up_times#decline', as: 'decline'
+      resources :bars, only: [:show]
     end
     post 'swiped_right', to: 'swipes#swiped_right', as: 'swiped_right'
     post 'swiped_left', to: 'swipes#swiped_left', as: 'swiped_left'
   end
-  get 'messages', to: 'pages#messages', as: 'messages'
   # resources :coupons, only [:show, :edit, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
