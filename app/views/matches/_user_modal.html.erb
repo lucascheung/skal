@@ -2,12 +2,12 @@
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div id="match-modal-insert" class="modal-body">
         <h2 class="modal-title"></h2>
-        <%= image_tag user.photos[0].photo.url, class:'user-modal-image', alt: "alttext" %>
-        <a href='#' class='checkout btn-alert blue'>Check out the bar</a>
-        <a type="button" href="#" class="btn-alert red" data-dismiss="modal">Keep swiping</a>
+        <% user.photos.each do |image| %>
+          <%= image_tag image.photo.url, class:'user-modal-image', alt: "alttext" %>
+        <% end %>
+        <a type="button" href="#" class="btn-close stick" data-dismiss="modal"><i class="fas fa-times"></i></a>
       </div>
     </div>
   </div>

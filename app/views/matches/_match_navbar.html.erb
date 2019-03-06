@@ -1,0 +1,12 @@
+<div class="navbar-wagon">
+  <div class="go-back">
+    <%= link_to user_matches_path(current_user) do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class="avatar-with-name" data-toggle="modal" data-target=".user-modal">
+    <%= image_tag user.photos[0].photo.url, class:'avatar', alt: "alttext" %>
+    <p><%= user.name %></p>
+  </div>
+  <div class='placeholder'></div>
+</div>

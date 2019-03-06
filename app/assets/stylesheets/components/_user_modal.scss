@@ -1,7 +1,11 @@
 .user-modal {
+  .modal-dialog {
+    overflow-y: initial !important
+  }
+
   .modal-content {
     background-color: rgba(255,255,255,0.85);
-    height: 95vh;
+    height: 100%;
     width: 95vw;
     border-radius: 10px;
     .close {
@@ -10,20 +14,22 @@
       right: 3vh;
     }
     .modal-body {
+      padding-top:0;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       justify-content: center;
+      overflow-y: auto;
     }
   }
   .user-modal-image {
-    width: 36vh;
-    height: 36vh;
-    border-radius: 18vh;
-    margin: 30px;
+    width: 95vw;
+    height: 80vh;
+    border-radius: 10px;
     object-fit: cover;
     object-position: center;
+
   }
 
 }
