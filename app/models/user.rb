@@ -43,13 +43,6 @@ class User < ApplicationRecord
         photo.remote_photo_url = url
         photo.save
       end
-
-      # auth.extra.raw_info.photos['data'].last(5).each do |image|
-      #   url = "https://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}&width=600"
-      #   photo = Photo.new(user: user)
-      #   photo.remote_photo_url = url
-      #   photo.save
-      # end
       photo = Photo.new(user: user)
       photo.remote_photo_url = auth.info.image
       photo.save
