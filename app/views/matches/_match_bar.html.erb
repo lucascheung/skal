@@ -1,7 +1,10 @@
-<div class="match-bar" data-toggle="modal" data-target=".bar-modal" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.9) 100%), url(<%= image_path the_match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
+<div class="match-bar" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.9) 100%), url(<%= image_path the_match.bar.photos[0].photo.url %>); background-position: center; background-size: cover;">
   <div class="bar-content">
     <%= link_to "https://www.google.com/maps?saddr=My+Location&daddr=#{bar.location}", id: "google-directions" do %>
       <p ><i class="fas fa-map-marker-alt"></i> <%= the_match.bar.name %></p>
     <% end %>
+    <div class="bar-icons">
+      <i class="fas fa-info-circle" data-toggle="modal" data-target=".bar-modal"></i>
+    </div>
   </div>
 </div>
