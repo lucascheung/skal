@@ -3,7 +3,9 @@
     <p><i class="fas fa-map-marker-alt"></i> <%= the_match.bar.name %></p>
     <div class="bar-icons">
       <i class="fas fa-info-circle" data-toggle="modal" data-target=".bar-modal"></i>
-      <i class="fas fa-directions" data-toggle="modal" data-target=".map-modal"></i>
+      <%= link_to "https://www.google.com/maps?saddr=My+Location&daddr=#{bar.location}", id: "google-directions" do %>
+        <i class="fas fa-directions"></i>
+      <% end %>
     </div>
   </div>
 </div>

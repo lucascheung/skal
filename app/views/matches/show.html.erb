@@ -1,7 +1,7 @@
 <%= render 'match_navbar', user: @your_date %>
 
 <div class="match-show-container">
-  <%= render 'match_bar', the_match: @match %>
+  <%= render 'match_bar', the_match: @match, bar: @bar %>
   <%= render 'match_ask_time', user: @your_date %>
   <%= render 'match_accept_waiting', user: @your_date %>
   <%= render 'match_opposite_responded', user: @your_date %>
@@ -10,7 +10,6 @@
 
 <%= render 'user_modal', user: @your_date %>
 <%= render 'bar_modal', bar: @bar %>
-<%= render 'map_modal', bar: @bar %>
 
 
 

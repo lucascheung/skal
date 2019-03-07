@@ -7,14 +7,6 @@ MeetUpTime.destroy_all
 Swipe.destroy_all
 User.destroy_all
 
-# def create_user_photos(user, url)
-#   5.times.each_with_index do |idx|
-#     photo = Photo.new(user: user)
-#     photo.remote_photo_url = "https://res.cloudinary.com/dcteumtl0/image/upload/v1551190991/skal/users/#{url}_#{idx+1}.jpg"
-#     photo.save!
-#   end
-# end
-
 def attach_photos(instance, attr, url_file, amount_photos)
   amount_photos.times.each_with_index do |idx|
     photo = Photo.new("#{attr}": instance)

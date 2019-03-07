@@ -6,7 +6,7 @@
   .modal-content {
     background-color: rgba(255,255,255,0.85);
     height: 100%;
-    width: 95vw;
+    width: 90vw;
     border-radius: 10px;
     .close {
       position: absolute;
@@ -22,20 +22,27 @@
       justify-content: center;
       overflow-y: auto;
     }
+    #bar-modal-insert {
+      border-radius: 10px;
+      .bar-modal-image {
+        width: 89.5vw;
+        height: 80vh;
+        object-fit: cover;
+        object-position: center;
+      }
+      .bar-description {
+        padding: 30px 20px;
+        font-size: 20px;
+        letter-spacing: .1mm;
+        background-color: burlywood;
+      }
+    }
   }
-  .bar-description {
-    padding: 30px 20px;
-    font-size: 20px;
-    letter-spacing: .1mm;
-    background-color: burlywood;
-  }
-  .bar-modal-image {
-    width: 95vw;
-    height: 80vh;
-    border-radius: 0px;
-    object-fit: cover;
-    object-position: center;
+}
 
-  }
-
+#google-directions {
+  text-decoration: none;
+  color: white;
+  cursor: default;
+  outline: 0;
 }
