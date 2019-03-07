@@ -23,26 +23,29 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
+    this_user = nil
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.first_name
       user.gender = auth.extra.raw_info.gender
       user.image = auth.info.image
-      # auth.extra.raw_info.photos['data'].last(5).each do |image|
-      #   url = "http://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}"
-      #   photo = Photo.new(user: user)
-      #   photo.remote_photo_url = url
-      #   photo.save
-      # end
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       user.preference = user.gender == 'male' ? 'female' : 'male'
+      user.save
+      auth.extra.raw_info.photos['data'].last(5).each do |image|
+        url = "https://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}&width=600"
+        photo = Photo.new(user: user)
+        photo.remote_photo_url = url
+        photo.save
+      end
       photo = Photo.new(user: user)
       photo.remote_photo_url = auth.info.image
       photo.save
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
+      this_user = user
     end
   end
 
@@ -54,3 +57,5 @@ class User < ApplicationRecord
     end
   end
 end
+
+
