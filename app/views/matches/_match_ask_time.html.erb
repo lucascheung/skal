@@ -1,7 +1,10 @@
 <div class="match-ask-time">
-  <p>Are you free to meet <strong><%= user.name %></strong> on the</p>
-  <h3><%= @match.meet_up_time.meet_up_time.strftime("%e %B at %l:%M%p")%></h3>
-  <p>with a <strong>free drink</strong>?</p>
+  <div class="calender-header">
+    <p>Free drink with <strong><%= user.name %></strong></p>
+  </div>
+  <div class="calender-date">
+   <h3><%= @match.meet_up_time.meet_up_time.strftime("%e %B at %l:%M%p")%></h3>
+  </div>
 </div>
 
 <div class="match-response">
