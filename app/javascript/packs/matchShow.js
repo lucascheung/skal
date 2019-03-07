@@ -90,7 +90,7 @@ function confirmed() {
       declineBtn.classList.add('inactive')
       match_accept_waiting.style.display = 'block';
       match_both_accept.style.display = 'none';
-      matchResponse.style.display = 'block';
+      matchResponse.style.display = 'flex';
       match_opposite_responded.style.display = 'none';
     } else if (data['confirmed'] === 'match_accepted') {
       console.log('waiting for you to respond')
@@ -99,7 +99,7 @@ function confirmed() {
       match_accept_waiting.style.display = 'none';
       match_both_accept.style.display = 'none'
       match_opposite_responded.style.display = 'block';
-      matchResponse.style.display = 'block';
+      matchResponse.style.display = 'flex';
     } else {
       console.log('no one accepted')
       acceptBtn.classList.remove('active')
@@ -107,7 +107,7 @@ function confirmed() {
       match_accept_waiting.style.display = 'none';
       match_both_accept.style.display = 'none';
       match_opposite_responded.style.display = 'none';
-      matchResponse.style.display = 'block';
+      matchResponse.style.display = 'flex';
     }
   })
 }

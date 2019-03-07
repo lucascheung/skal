@@ -7,15 +7,19 @@
   flex-direction: column;
   .profile-pic {
     margin: 10vh 0 0 0 ;
-    width: 40vw;
-    height: 40vw;
-    border-radius: 20vw;
+    width: 46vw;
+    height: 46vw;
+    border-radius: 23vw;
   }
   h2 {
     margin: 3vh 0;
   }
   p {
     margin-top: 5vw;
+  }
+
+  .settings-content {
+    background-color: #dfdfdf;
   }
 
   .checked-state.contact-type {
