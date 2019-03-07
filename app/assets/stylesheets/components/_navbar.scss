@@ -81,6 +81,9 @@
 }
 
 .avatar-with-name {
+  img{
+    object-fit: cover;
+  }
   p{
     font-size: 10px;
     color: gray;

@@ -1,0 +1,50 @@
+<div class="signin-container hidden-sm hidden-md hidden-lg">
+  <div class="home-container">
+    <h1>SKÅL</h1>
+    <%= image_tag "skal_logo_white.png", class:'skal_logo', alt: "alttext" %>
+    <div id="beer-container">
+      <!-- <div class="pour"></div> -->
+      <div id="beaker">
+        <div class="beer-foam">
+          <div class="foam-1"></div>
+          <div class="foam-2"></div>
+          <div class="foam-3"></div>
+          <div class="foam-4"></div>
+          <div class="foam-5"></div>
+          <div class="foam-6"></div>
+          <div class="foam-7"></div>
+        </div>
+
+        <div id="liquid">
+
+          <div class="bubble bubble1"></div>
+          <div class="bubble bubble2"></div>
+          <div class="bubble bubble3"></div>
+          <div class="bubble bubble4"></div>
+          <div class="bubble bubble5"></div>
+        </div>
+      </div>
+    </div>
+    <p class='tagline'>First round's on us!</p>
+    <%= link_to user_facebook_omniauth_authorize_path, class:'fb-signup' do %>
+      Sign in with Facebook <i class="fab fa-facebook-square"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="hidden-xs text-top-center">
+  <div class="banner">
+    <div class="background"></div>
+  </div>
+  <div class="banner-content">
+    <h1 id="text-header">SKÅL</h1>
+    <h2 id="text-sub-header">First round's on us.</h2>
+    <p>Explore SKÅL on a mobile device now.</p>
+  </div>
+</div>
+
+
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "homepage" %>
+<% end %>

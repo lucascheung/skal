@@ -3,10 +3,10 @@ class UsersController < ApplicationController
   def index
     @swiped_id = []
     if current_user.swipes == []
-      @users = User.where.not('id = ?', current_user.id).where('gender = ?', current_user.preference)
+      @users = User.where.not('id = ?', current_user.id).where('gender = ?', current_user.preference).shuffle
     else
       current_user.swipes.each { |swipe| @swiped_id << swipe.swipee.id }
-      @users = User.where.not('id = ?', current_user.id).where("id NOT IN (?)", @swiped_id).where('gender = ?', current_user.preference)
+      @users = User.where.not('id = ?', current_user.id).where("id NOT IN (?)", @swiped_id).where('gender = ?', current_user.preference).shuffle
     end
   end
 
