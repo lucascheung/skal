@@ -33,12 +33,23 @@ class User < ApplicationRecord
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       user.preference = user.gender == 'male' ? 'female' : 'male'
       user.save
-      auth.extra.raw_info.photos['data'].last(5).each do |image|
-        url = "https://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}&width=600"
+      propic_id = auth.extra.raw_info.albums['data'].find { |album| album['name'] == "Profile Pictures" }['id']
+      album_url = "https://graph.facebook.com/v2.10/#{propic_id}/photos?access_token=#{auth.credentials.token}"
+      user_serialized = open(album_url).read
+      profile_data= JSON.parse(user_serialized)
+      profile_data['data'].first(5).each do |image|
+        url = "https://graph.facebook.com/v2.10/#{image['id']}/picture?access_token=#{auth.credentials.token}&width=600"
         photo = Photo.new(user: user)
         photo.remote_photo_url = url
         photo.save
       end
+
+      # auth.extra.raw_info.photos['data'].last(5).each do |image|
+      #   url = "https://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}&width=600"
+      #   photo = Photo.new(user: user)
+      #   photo.remote_photo_url = url
+      #   photo.save
+      # end
       photo = Photo.new(user: user)
       photo.remote_photo_url = auth.info.image
       photo.save
