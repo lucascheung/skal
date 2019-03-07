@@ -1,3 +1,4 @@
+require 'pry-byebug'
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -29,6 +30,12 @@ class User < ApplicationRecord
       user.name = auth.info.first_name
       user.gender = auth.extra.raw_info.gender
       user.image = auth.info.image
+      # auth.extra.raw_info.photos['data'].last(5).each do |image|
+      #   url = "http://graph.facebook.com/v2.10/#{image.id}/picture?access_token=#{auth.credentials.token}"
+      #   photo = Photo.new(user: user)
+      #   photo.remote_photo_url = url
+      #   photo.save
+      # end
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       user.preference = user.gender == 'male' ? 'female' : 'male'
       photo = Photo.new(user: user)

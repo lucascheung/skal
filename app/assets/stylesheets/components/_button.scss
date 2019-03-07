@@ -74,7 +74,7 @@
 }
 
 .btn-respond {
-  width: 25vh;
+  width: 45vw;
   height: 10vh;
   text-align: center;
   display: flex;
@@ -93,10 +93,10 @@
     border-radius: 0 8px 8px 0;
   }
   &.active {
-    width:40vh;
+    width:75vw;
   }
   &.inactive {
-    width:10vh;
+    width:15vw;
   }
 }
 

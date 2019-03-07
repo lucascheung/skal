@@ -8,7 +8,7 @@
   }
   .match-bar {
     position:relative;
-    width: 95vw;
+    width: 90vw;
     height: 40vh;
     border-radius: 5px;
     box-shadow: 2px 2px 11px 0px rgba(207,192,207,1);
@@ -17,7 +17,7 @@
       position: absolute;
       bottom: 0px;
       color: $white;
-      width: 95vw;
+      width: 90vw;
       height: 8vh;
       display: flex;
       justify-content: space-between;
@@ -26,16 +26,35 @@
         margin: 0;
         padding-left: 3vw;
       }
-      i {
-        font-size: 4vh;
-        padding-right: 5vw;
-        text-decoration: none;
+      .bar-icons{
+        i {
+          font-size: 4vh;
+          padding-right: 5vw;
+          text-decoration: none;
+        }
       }
     }
   }
 
   .match-ask-time {
-    padding: 3vh;
+    padding: 3vh 0 0 0;
+    border-radius: 10px;
+    .calender-header {
+      border-radius: 10px 10px 0 0;
+      background-color: #964741;
+      color: #fdfdfd;
+      width: 90vw;
+      padding: 1vh;
+    }
+    .calender-date {
+      border-radius: 0 0 10px 10px;
+      border: 0.5px solid #dedee2;
+      border-top: none;
+      width: 90vw;
+      text-align: center;
+      background-color: #fafafc;
+      padding: 3vh 0;
+    }
     p {
       margin: 0;
       text-align: center;
@@ -56,12 +75,21 @@
     text-align: center;
     p {
       margin: 0;
+      padding: 1vh;
     }
   }
 
   .match-opposite-responded {
     display:none;
     text-align: center;
+    p {
+      padding-top: 5vh;
+    }
+    .avatar {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+    }
   }
 
   .match-accept-waiting {
@@ -81,8 +109,8 @@
     background-color: #ffc635;
     color: $white;
     font-size: 4vh;
-    width: 50vh;
-    height: 10vh;
+    width: 90vw;
+    height: 13vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;

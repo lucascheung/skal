@@ -1,5 +1,6 @@
 const acceptBtn = document.querySelector('.match-accept.btn-respond.accept')
 const declineBtn = document.querySelector('.match-decline.btn-respond.decline')
+const matchResponse = document.querySelector('.match-response')
 
 const hammerAccept = new Hammer(acceptBtn);
 const hammerDecline = new Hammer(declineBtn);
@@ -79,6 +80,7 @@ function confirmed() {
       console.log('they have both accepted');
       acceptBtn.classList.add('active')
       declineBtn.classList.add('inactive')
+      matchResponse.style.display = 'none';
       match_both_accept.style.display = 'block';
       match_accept_waiting.style.display = 'none';
       match_opposite_responded.style.display = 'none';
@@ -88,6 +90,7 @@ function confirmed() {
       declineBtn.classList.add('inactive')
       match_accept_waiting.style.display = 'block';
       match_both_accept.style.display = 'none';
+      matchResponse.style.display = 'block';
       match_opposite_responded.style.display = 'none';
     } else if (data['confirmed'] === 'match_accepted') {
       console.log('waiting for you to respond')
@@ -96,6 +99,7 @@ function confirmed() {
       match_accept_waiting.style.display = 'none';
       match_both_accept.style.display = 'none'
       match_opposite_responded.style.display = 'block';
+      matchResponse.style.display = 'block';
     } else {
       console.log('no one accepted')
       acceptBtn.classList.remove('active')
@@ -103,6 +107,7 @@ function confirmed() {
       match_accept_waiting.style.display = 'none';
       match_both_accept.style.display = 'none';
       match_opposite_responded.style.display = 'none';
+      matchResponse.style.display = 'block';
     }
   })
 }
