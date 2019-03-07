@@ -55,17 +55,17 @@
 
 
 .btn-close {
-  width: 8vh;
-  height: 8vh;
-  border-radius: 4vh;
-  color: #559fce;
-  background-color: $white;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 2.5vh;
+  color: #7e7e7e;
+  background-color: rgba(255,255,255,0.7);
   text-align: center;
   align-items: center;
   text-decoration: none;
   justify-content: center;
   display: flex;
-  font-size: 6vh;
+  font-size: 2.5vh;
   &.stick{
     position: fixed;
     top: 2vh;
@@ -76,6 +76,7 @@
 .btn-respond {
   width: 45vw;
   height: 10vh;
+  margin-top: 2vh;
   text-align: center;
   display: flex;
   align-items: center;
