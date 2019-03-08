@@ -1,5 +1,5 @@
 meta_product_name: "SKÅL"
 meta_title: "SKÅL - First round's on us!"
 meta_description: "A social dating app that decides the bar of your first date with a free drink."
-meta_image: "https://images.unsplash.com/photo-1542326891-50b14105a80b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80" # should exist in `app/assets/images/`
+meta_image: "https://images.unsplash.com/photo-1542326891-50b14105a80b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=630&q=80" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
