@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
 
   has_many :photos
-  # has_many :swipes, foreign_key: "swipee_id", class_name: "Swipe"
 
   def matches
     first_matches + last_matches
@@ -23,7 +22,6 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    this_user = nil
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
@@ -43,13 +41,9 @@ class User < ApplicationRecord
         photo.remote_photo_url = url
         photo.save
       end
-      photo = Photo.new(user: user)
-      photo.remote_photo_url = auth.info.image
-      photo.save
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
-      this_user = user
     end
   end
 

@@ -43,7 +43,10 @@
   text-align: center;
   margin-top: 3vh;
   font-weight: bolder;
-  padding-top: 20px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  // padding-top: 20px;
   text-decoration: none;
   &.red {
     background-color: #e07f78;
