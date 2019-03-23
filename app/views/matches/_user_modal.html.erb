@@ -5,7 +5,7 @@
       <div id="match-modal-insert" class="modal-body">
         <h2 class="modal-title"></h2>
         <% user.photos.reverse.each_with_index do |image, idx| %>
-          <% if idx == 1 && !user.bio.empty?  %>
+          <% if idx == 1 && user.bio != ""  %>
             <div class="user-description"><%= user.bio %></div>
           <% end %>
           <%= image_tag image.photo.url, class:'user-modal-image', alt: "alttext" %>
