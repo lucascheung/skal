@@ -34,7 +34,7 @@ class User < ApplicationRecord
       propic_id = auth.extra.raw_info.albums['data'].find { |album| album['name'] == "Profile Pictures" }['id']
       album_url = "https://graph.facebook.com/v2.10/#{propic_id}/photos?access_token=#{auth.credentials.token}"
       user_serialized = open(album_url).read
-      profile_data= JSON.parse(user_serialized)
+      profile_data = JSON.parse(user_serialized)
       profile_data['data'].first(5).each do |image|
         url = "https://graph.facebook.com/v2.10/#{image['id']}/picture?access_token=#{auth.credentials.token}&width=600"
         photo = Photo.new(user: user)
