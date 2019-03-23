@@ -1,7 +1,11 @@
 <%= render 'shared/settings_navbar' %>
 <div class="settings-container">
-  <%= image_tag current_user.photos[0].photo.url, class:'profile-pic', alt: "profile-pic" %>
+  <div class="profile-pic-container clickable" data-toggle="modal" data-target=".user-modal">
+    <%= image_tag current_user.photos.first.photo.url, class:'profile-pic', alt: "profile-pic" %>
+  </div>
+
   <h2><%= "#{current_user.name}, #{current_user.age}" %></h2>
+  <a href="#" class="clickable" data-toggle="modal" data-target=".user-modal">Edit your profile</a>
   <div class="preference">
     <p>Preference</p>
     <div class="checked-state contact-type">
@@ -19,6 +23,8 @@
     <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
   <% end %>
 </div>
+
+<%= render 'user_modal', user: current_user %>
 
 
 <%= content_for(:after_js) do %>
