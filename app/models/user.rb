@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :first_matches, foreign_key: "first_user_id", class_name: "Match"
   has_many :last_matches, foreign_key: "last_user_id", class_name: "Match"
 
-
   has_many :photos
 
   def matches

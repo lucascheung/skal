@@ -5,7 +5,7 @@
   </div>
 
   <h2><%= "#{current_user.name}, #{current_user.age}" %></h2>
-  <a href="#" class="clickable" data-toggle="modal" data-target=".user-modal">Edit your profile</a>
+  <%= link_to "Edit profile", edit_user_path(current_user)  %>
   <div class="preference">
     <p>Preference</p>
     <div class="checked-state contact-type">
@@ -24,7 +24,7 @@
   <% end %>
 </div>
 
-<%= render 'user_modal', user: current_user %>
+<%= render 'matches/user_modal', user: current_user %>
 
 
 <%= content_for(:after_js) do %>

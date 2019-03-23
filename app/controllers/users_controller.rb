@@ -14,6 +14,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to settings_path
+  end
+
   def change_preference
     user = current_user
     user.preference = params[:preference]
@@ -50,5 +60,11 @@ class UsersController < ApplicationController
   def generate_meet_up_time
     @date = rand(Date.today..Date.today + 14).to_datetime
     return @date.change(hour: rand(17..22))
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:bio)
   end
 end
