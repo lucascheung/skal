@@ -31,14 +31,14 @@ class User < ApplicationRecord
       user.preference = user.gender == 'male' ? 'female' : 'male'
       user.save
       propic_id = auth.extra.raw_info.albums['data'].find { |album| album['name'] == "Profile Pictures" }['id']
-      album_url = "https://graph.facebook.com/v2.10/#{propic_id}/photos?access_token=#{auth.credentials.token}"
+      album_url = "https://graph.facebook.com/v4.0/#{propic_id}/photos?access_token=#{auth.credentials.token}"
       user_serialized = open(album_url).read
       profile_data = JSON.parse(user_serialized)
       profile_data['data'].first(5).each do |image|
-        url = "https://graph.facebook.com/v2.10/#{image['id']}/picture?access_token=#{auth.credentials.token}&width=600"
+        url = "https://graph.facebook.com/v4.0/#{image['id']}/picture?access_token=#{auth.credentials.token}&width=600"
         photo = Photo.new(user: user)
         photo.remote_photo_url = url
-        photo.save
+        photo.save!
       end
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
