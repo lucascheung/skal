@@ -29,6 +29,7 @@ class User < ApplicationRecord
       user.image = auth.info.image
       user.age = age_calculate(Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')) # assuming the user model has an image
       user.preference = user.gender == 'male' ? 'female' : 'male'
+      user.photos = [auth.info.image]
       user.save
       propic_id = auth.extra.raw_info.albums['data'].find { |album| album['name'] == "Profile Pictures" }['id']
       album_url = "https://graph.facebook.com/v4.0/#{propic_id}/photos?access_token=#{auth.credentials.token}"
